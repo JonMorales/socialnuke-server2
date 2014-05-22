@@ -1,0 +1,45 @@
+[2014-05-22 01:39:14] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5304
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4671): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4659): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-05-22 01:40:06] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5304
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4671): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4659): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-05-22 01:40:09] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5304
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4671): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4659): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
