@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql','test'
+	'default' => 'mysql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -66,7 +66,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'database',
+			'database'  => 'test',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

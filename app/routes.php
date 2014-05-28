@@ -10,13 +10,21 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::model('insta', 'instagram');
 
 Route::get('/', function()
 {
 	return View::make('hello');
 });
 
-Route::get('login', function()
-{
-	return View::make('login');
-});
+//show pages
+Route::get('login', array('uses' => 'HomeController@showLogin'));
+Route::get('registration', array('uses' => 'RegisterController@showRegistration'));
+Route::get('settings', 'InstagramController@showInstagram');
+Route::get('callback', 'InstagramController@callback');
+
+//handles form submissions
+Route::post('login', array('uses' => 'HomeController@doLogin'));
+Route::post('registration', array('uses' => 'RegisterController@doRegistration'));
+Route::post('settings', array('uses' => 'InstagramController@CreateInstagram'));
+Route::post('callback', array('uses' => 'InstagramController@unfollow'));
