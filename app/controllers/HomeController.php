@@ -23,7 +23,8 @@ class HomeController extends BaseController {
 	public function showLogin()
 	{
 		// show the form
-		return View::make('login');
+		// return View::make('login');
+		echo 'this works';
 	}
 	
 	public function doLogin()
