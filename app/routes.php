@@ -18,13 +18,13 @@ Route::get('/', function()
 });
 
 //show pages
-Route::get('login', array('uses' => 'HomeController@showLogin'));
+//Route::get('login', array('uses' => 'HomeController@showLogin'));
 Route::get('registration', array('uses' => 'RegisterController@showRegistration'));
 Route::get('settings', 'InstagramController@showInstagram');
 Route::get('callback', 'InstagramController@callback');
 
 //handles form submissions
-Route::post('login', array('uses' => 'HomeController@doLogin'));
+Route::post('login', 'LoginController@doLogin');
 Route::post('registration', array('uses' => 'RegisterController@doRegistration'));
 Route::post('settings', array('uses' => 'InstagramController@CreateInstagram'));
 Route::post('callback', array('uses' => 'InstagramController@unfollow'));
