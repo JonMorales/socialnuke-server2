@@ -28,3 +28,10 @@ Route::post('login', 'LoginController@doLogin');
 Route::post('registration', array('uses' => 'RegisterController@doRegistration'));
 Route::post('settings', array('uses' => 'InstagramController@CreateInstagram'));
 Route::post('callback', array('uses' => 'InstagramController@unfollow'));
+
+
+/* Facebook Login Test code  - Inserted by Ricky */
+Route::get('/FBlogin-test', function()
+{
+	return View::make('FBlogin-test');
+});
