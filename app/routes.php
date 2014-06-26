@@ -18,13 +18,27 @@ Route::get('/', function()
 });
 
 //show pages
-Route::get('login', array('uses' => 'HomeController@showLogin'));
+//Route::get('login', array('uses' => 'HomeController@showLogin'));
 Route::get('registration', array('uses' => 'RegisterController@showRegistration'));
 Route::get('settings', 'InstagramController@showInstagram');
 Route::get('callback', 'InstagramController@callback');
 
 //handles form submissions
-Route::post('login', array('uses' => 'HomeController@doLogin'));
+Route::post('login', 'LoginController@doLogin');
 Route::post('registration', array('uses' => 'RegisterController@doRegistration'));
 Route::post('settings', array('uses' => 'InstagramController@CreateInstagram'));
 Route::post('callback', array('uses' => 'InstagramController@unfollow'));
+
+
+/* Facebook Login Test code  - Inserted by Ricky */
+Route::get('FBlogin-test', function()
+{
+	return View::make('FBlogin-test');
+});
+
+/* Settings Page Test code */
+Route::get('twitter', function()
+{
+
+    return View::make('twitter');
+});
