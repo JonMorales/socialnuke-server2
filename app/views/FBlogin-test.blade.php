@@ -6,17 +6,14 @@
 	<title>Test File for Facebook Login - Sends a simple mock User object</title>
 </head>
 <body>
-	<div class="welcome">
-		
-	</div>
-</body>
+
 	<script src="<?php echo URL::asset('js/jquery.js') ?>"></script>
 	<script type="text/javascript">
-
+	
 	$(document).ready(function() {
 		/* This is a mock object used to simulate the app */
 		var user = {
-            email: "fakeEmail@test.com",
+            email: "testemail@testmail.com",
             FBtoken : "testToken12345"
         }
         var request = new AjaxRequest();
@@ -47,16 +44,16 @@
 		        url: "/" + self.url,
 		        data: self.dataToSend,
 		        type: "POST",
-		        dataType: "json",
+		        dataType: "text",
 		        error: function(jqXhr, textStatus, errorThrown) {
-		            /* uncomment if you want to see the errors
+		            //uncomment if you want to see the errors
 		            alert("There was an error");
 		            for(var i=0; i<jqXhr.length; i++) {
 		                alert(jqXhr[i]);
 		            };
 		            alert(textStatus);
 		            alert(errorThrown);
-		            */
+		            
 		        },
 		        success: function(data, status, jqXhr){
 		            if(status === "success") {
@@ -68,6 +65,8 @@
 		        }
 		    })
 		}
-		
+
+	
 	</script>
+</body>
 </html>

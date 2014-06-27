@@ -1,15 +1,13 @@
 <?php
 class LoginController extends BaseController 
 {
-	public function doLogin($email,$fbToken)
+	public function makeLogin()
 	{
-		if($user = User::find($email)==true);
+		return View::make('FBlogin-test');
+	}
 
-		else
-		{
-			$user = new User($email,$fbToken);
-		}
-
-			
+	public function doLogin($user)
+	{
+		echo $user;			
 	}
 }
