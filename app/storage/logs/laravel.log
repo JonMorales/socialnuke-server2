@@ -2666,3 +2666,825 @@ Stack trace:
 #10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
 #11 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
 #12 {main} [] []
+[2014-06-25 02:34:04] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5304
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4671): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4659): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-06-25 02:38:47] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for LoginController::doLogin()' in C:\xampp\htdocs\socialnukemain\app\controllers\LoginController.php:4
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\controllers\LoginController.php(4): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 4, Array)
+#1 [internal function]: LoginController->doLogin()
+#2 C:\xampp\htdocs\socialnukemain\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5401): Illuminate\Routing\Controller->callAction('doLogin', Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5389): Illuminate\Routing\ControllerDispatcher->call(Object(LoginController), Object(Illuminate\Routing\Route), 'doLogin')
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'LoginController', 'doLogin')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-06-25 02:39:45] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5304
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4671): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4659): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-06-25 02:39:54] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5304
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4671): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4659): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-06-25 02:39:57] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5304
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4671): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4659): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-06-25 02:40:13] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for LoginController::doLogin()' in C:\xampp\htdocs\socialnukemain\app\controllers\LoginController.php:4
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\controllers\LoginController.php(4): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 4, Array)
+#1 [internal function]: LoginController->doLogin()
+#2 C:\xampp\htdocs\socialnukemain\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5401): Illuminate\Routing\Controller->callAction('doLogin', Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5389): Illuminate\Routing\ControllerDispatcher->call(Object(LoginController), Object(Illuminate\Routing\Route), 'doLogin')
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'LoginController', 'doLogin')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-06-25 02:40:22] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for LoginController::doLogin()' in C:\xampp\htdocs\socialnukemain\app\controllers\LoginController.php:4
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\controllers\LoginController.php(4): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 4, Array)
+#1 [internal function]: LoginController->doLogin()
+#2 C:\xampp\htdocs\socialnukemain\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5401): Illuminate\Routing\Controller->callAction('doLogin', Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5389): Illuminate\Routing\ControllerDispatcher->call(Object(LoginController), Object(Illuminate\Routing\Route), 'doLogin')
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'LoginController', 'doLogin')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-06-25 03:09:04] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:09:10] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:09:19] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:09:23] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:09:24] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:09:39] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:10:07] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:10:11] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:10:25] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:10:28] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-25 03:10:29] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:09] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:25] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:36] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:38] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:39] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:44] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:48] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:51] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:48:56] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:49:04] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:49:05] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:49:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:49:22] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:49:23] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:49:25] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:49:42] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:50:11] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:50:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:50:48] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:50:49] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:51:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:51:13] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:51:14] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:51:23] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:51:27] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:51:30] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:53:03] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:53:07] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:53:28] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:53:57] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:54:04] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:54:08] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:54:24] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:54:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:54:38] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:54:42] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:55:55] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:56:45] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 01:56:46] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:00:24] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:01:03] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:01:17] production.ERROR: exception 'ErrorException' with message 'Use of undefined constant CONSUMER_KEY - assumed 'CONSUMER_KEY'' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\views\twitter.php(4): Illuminate\Exception\Handler->handleError(8, 'Use of undefine...', 'C:\\xampp\\htdocs...', 4, Array)
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9536): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9529): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9414): Illuminate\View\Engines\PhpEngine->get('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9401): Illuminate\View\View->getContents()
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9392): Illuminate\View\View->renderContents()
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10085): Illuminate\View\View->render()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9622): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4839): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4665): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#19 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#20 {main} [] []
+[2014-06-26 02:01:25] production.ERROR: exception 'ErrorException' with message 'Use of undefined constant CONSUMER_KEY - assumed 'CONSUMER_KEY'' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\views\twitter.php(4): Illuminate\Exception\Handler->handleError(8, 'Use of undefine...', 'C:\\xampp\\htdocs...', 4, Array)
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9536): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9529): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9414): Illuminate\View\Engines\PhpEngine->get('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9401): Illuminate\View\View->getContents()
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9392): Illuminate\View\View->renderContents()
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10085): Illuminate\View\View->render()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9622): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4839): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4665): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#19 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#20 {main} [] []
+[2014-06-26 02:03:22] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\views\twitter.php on line 4 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\twitteroauth.php:59
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\twitteroauth.php(59): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 59, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\views\twitter.php(4): TwitterOAuth->__construct()
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9536): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9529): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9414): Illuminate\View\Engines\PhpEngine->get('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9401): Illuminate\View\View->getContents()
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9392): Illuminate\View\View->renderContents()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10085): Illuminate\View\View->render()
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9622): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4839): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4665): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#20 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#21 {main} [] []
+[2014-06-26 02:03:23] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\views\twitter.php on line 4 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\twitteroauth.php:59
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\twitteroauth.php(59): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 59, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\views\twitter.php(4): TwitterOAuth->__construct()
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9536): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9529): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9414): Illuminate\View\Engines\PhpEngine->get('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9401): Illuminate\View\View->getContents()
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9392): Illuminate\View\View->renderContents()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10085): Illuminate\View\View->render()
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(9622): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4839): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4665): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#20 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#21 {main} [] []
+[2014-06-26 02:15:17] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting identifier (T_STRING)' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:15:18] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting identifier (T_STRING)' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:15:19] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting identifier (T_STRING)' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:15:29] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'main(): Failed opening required 'OAuth.php' (include_path='C:\xampp\htdocs\socialnukemain\vendor/phpseclib/phpseclib/phpseclib;.;C:\xampp\php\PEAR')' in C:\xampp\htdocs\socialnukemain\app\libraries\twitteroauth.php:12
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:15:30] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'main(): Failed opening required 'OAuth.php' (include_path='C:\xampp\htdocs\socialnukemain\vendor/phpseclib/phpseclib/phpseclib;.;C:\xampp\php\PEAR')' in C:\xampp\htdocs\socialnukemain\app\libraries\twitteroauth.php:12
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:22:00] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:22:02] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:23:22] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:24:21] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:24:31] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:24:32] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:26:35] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting identifier (T_STRING)' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:26:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting identifier (T_STRING)' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:27:27] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\TwitterOAuth\print_r' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:43
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:32:06] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting identifier (T_STRING)' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:32:07] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting identifier (T_STRING)' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:32:31] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\AnvilHeavy' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:33:05] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:33:39] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Acme\Product\Anvil\AnvilInterface' not found' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Anvil\AnvilHeavy.php:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:34:34] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:36:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:36:29] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Namespace declaration statement has to be the very first statement in the script' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Anvil\AnvilInterface.php:6
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:37:19] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Anvil\AnvilHeavy' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:37:53] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Namespace declaration statement has to be the very first statement in the script' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Anvil\AnvilInterface.php:5
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:38:24] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Anvil\AnvilHeavy' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:38:46] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\AnvilHeavy' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:41:41] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'Acme\Product\Anvil\AnvilInterface' not found' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Anvil\AnvilHeavy.php:5
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:42:51] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot instantiate interface SocialNuke\APIs\Anvil\AnvilInterface' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:43:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot instantiate interface SocialNuke\APIs\Anvil\AnvilInterface' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:43:39] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot instantiate interface SocialNuke\APIs\Anvil\AnvilInterface' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:44:23] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot instantiate interface SocialNuke\APIs\Anvil\AnvilInterface' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:44:33] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot instantiate interface SocialNuke\APIs\Anvil\AnvilInterface' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:44:36] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot instantiate interface SocialNuke\APIs\Anvil\AnvilInterface' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:44:50] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot instantiate interface SocialNuke\APIs\Anvil\AnvilInterface' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:45:53] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:46:31] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\routes.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:46:50] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:61
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(61): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 61, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-26 02:49:12] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:61
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(61): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 61, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-26 02:49:47] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:36
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(36): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-26 02:52:22] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:19
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-26 02:53:38] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-26 02:53:56] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-26 02:54:13] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-26 02:54:14] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-26 02:55:03] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-26 02:55:05] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-26 02:55:37] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-27 01:25:53] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-27 01:48:36] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-27 01:56:43] production.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SocialNuke\APIs\Twitter\TwitterOAuth::__construct(), called in C:\xampp\htdocs\socialnukemain\app\routes.php on line 42 and defined' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:63
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php(63): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\socialnukemain\app\routes.php(42): SocialNuke\APIs\Twitter\TwitterOAuth->__construct()
+#2 [internal function]: {closure}()
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2014-06-27 02:00:22] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\OAuthSignatureMethod_HMAC_SHA1' not found' in C:\xampp\htdocs\socialnukemain\app\libraries\SocialNuke\APIs\Twitter\TwitterOAuth.php:64
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:07:09] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:5
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
