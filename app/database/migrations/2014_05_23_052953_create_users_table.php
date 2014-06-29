@@ -15,11 +15,17 @@ class CreateUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name', 32);
-			$table->string('username', 32);
 			$table->string('email', 320);
-			$table->string('password', 64);
-			$table->string('token', 64)->nullabe();
+			$table->string('facebookToken', 64)->nullable();
+			$table->boolean('facebookActivation')->nullable();
+			$table->string('instagramToken', 64)->nullable();
+			$table->boolean('instagramActivation')->nullable();
+			$table->string('twitterToken', 64)->nullable();
+			$table->boolean('twitterActivation')->nullable();
+			$table->string('snapchatUsername', 64)->nullable();
+			$table->string('snapchatPassword', 64)->nullable();
+			$table->boolean('snapchatActivation')->nullable();
+			$table->boolean('phoneActivation')->nullable();
 			$table->timestamps();
 		});
 	}
