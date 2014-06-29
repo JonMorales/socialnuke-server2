@@ -3488,3 +3488,306 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2014-06-27 02:35:53] production.ERROR: exception 'ReflectionException' with message 'Class TwitterController does not exist' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:242
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(242): ReflectionClass->__construct('TwitterControll...')
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(212): Illuminate\Container\Container->build('TwitterControll...', Array)
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(586): Illuminate\Container\Container->make('TwitterControll...', Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5396): Illuminate\Foundation\Application->make('TwitterControll...')
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5385): Illuminate\Routing\ControllerDispatcher->makeController('TwitterControll...')
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-06-27 02:36:07] production.ERROR: exception 'ErrorException' with message 'include(C:\xampp\htdocs\socialnukemain/app/libraries/SocialNuke/APIs/Twitter/twitteroauth.php): failed to open stream: No such file or directory' in C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php:377
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Illuminate\Exception\Handler->handleError(2, 'include(C:\\xamp...', 'C:\\xampp\\htdocs...', 377, Array)
+#1 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Composer\Autoload\includeFile()
+#2 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(269): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('TwitterOAuth')
+#4 C:\xampp\htdocs\socialnukemain\app\controllers\TwitterController.php(5): spl_autoload_call('TwitterOAuth')
+#5 [internal function]: TwitterController->showTwitter()
+#6 C:\xampp\htdocs\socialnukemain\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5401): Illuminate\Routing\Controller->callAction('showTwitter', Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5389): Illuminate\Routing\ControllerDispatcher->call(Object(TwitterController), Object(Illuminate\Routing\Route), 'showTwitter')
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#22 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2014-06-27 02:36:08] production.ERROR: exception 'ErrorException' with message 'include(C:\xampp\htdocs\socialnukemain/app/libraries/SocialNuke/APIs/Twitter/twitteroauth.php): failed to open stream: No such file or directory' in C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php:377
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Illuminate\Exception\Handler->handleError(2, 'include(C:\\xamp...', 'C:\\xampp\\htdocs...', 377, Array)
+#1 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Composer\Autoload\includeFile()
+#2 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(269): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('TwitterOAuth')
+#4 C:\xampp\htdocs\socialnukemain\app\controllers\TwitterController.php(5): spl_autoload_call('TwitterOAuth')
+#5 [internal function]: TwitterController->showTwitter()
+#6 C:\xampp\htdocs\socialnukemain\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5401): Illuminate\Routing\Controller->callAction('showTwitter', Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5389): Illuminate\Routing\ControllerDispatcher->call(Object(TwitterController), Object(Illuminate\Routing\Route), 'showTwitter')
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#22 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2014-06-27 02:36:40] production.ERROR: exception 'ErrorException' with message 'include(C:\xampp\htdocs\socialnukemain/app/libraries/SocialNuke/APIs/Twitter/twitteroauth.php): failed to open stream: No such file or directory' in C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php:377
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Illuminate\Exception\Handler->handleError(2, 'include(C:\\xamp...', 'C:\\xampp\\htdocs...', 377, Array)
+#1 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Composer\Autoload\includeFile()
+#2 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(269): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('TwitterOAuth')
+#4 C:\xampp\htdocs\socialnukemain\app\controllers\TwitterController.php(5): spl_autoload_call('TwitterOAuth')
+#5 [internal function]: TwitterController->showTwitter()
+#6 C:\xampp\htdocs\socialnukemain\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5401): Illuminate\Routing\Controller->callAction('showTwitter', Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5389): Illuminate\Routing\ControllerDispatcher->call(Object(TwitterController), Object(Illuminate\Routing\Route), 'showTwitter')
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#22 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2014-06-27 02:37:07] production.ERROR: exception 'ErrorException' with message 'include(C:\xampp\htdocs\socialnukemain/app/libraries/SocialNuke/APIs/Twitter/twitteroauth.php): failed to open stream: No such file or directory' in C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php:377
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Illuminate\Exception\Handler->handleError(2, 'include(C:\\xamp...', 'C:\\xampp\\htdocs...', 377, Array)
+#1 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Composer\Autoload\includeFile()
+#2 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(269): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('TwitterOAuth')
+#4 C:\xampp\htdocs\socialnukemain\app\controllers\TwitterController.php(5): spl_autoload_call('TwitterOAuth')
+#5 [internal function]: TwitterController->showTwitter()
+#6 C:\xampp\htdocs\socialnukemain\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5401): Illuminate\Routing\Controller->callAction('showTwitter', Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5389): Illuminate\Routing\ControllerDispatcher->call(Object(TwitterController), Object(Illuminate\Routing\Route), 'showTwitter')
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#22 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2014-06-27 02:39:13] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\Eloquent' not found' in C:\xampp\htdocs\socialnukemain\app\models\SocialNuke\APIs\Twitter\TwitterOAuth.php:18
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:39:23] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\Eloquent' not found' in C:\xampp\htdocs\socialnukemain\app\models\SocialNuke\APIs\Twitter\TwitterOAuth.php:18
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:39:47] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\TwitterOAuth' not found' in C:\xampp\htdocs\socialnukemain\app\views\twitter.php:5
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:42:41] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\BaseController' not found' in C:\xampp\htdocs\socialnukemain\app\controllers\TwitterController.php:5
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:43:08] production.ERROR: exception 'ReflectionException' with message 'Class TwitterController does not exist' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:242
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(242): ReflectionClass->__construct('TwitterControll...')
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(212): Illuminate\Container\Container->build('TwitterControll...', Array)
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(586): Illuminate\Container\Container->make('TwitterControll...', Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5396): Illuminate\Foundation\Application->make('TwitterControll...')
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5385): Illuminate\Routing\ControllerDispatcher->makeController('TwitterControll...')
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-06-27 02:43:44] production.ERROR: exception 'ReflectionException' with message 'Class TwitterController does not exist' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:242
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(242): ReflectionClass->__construct('TwitterControll...')
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(212): Illuminate\Container\Container->build('TwitterControll...', Array)
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(586): Illuminate\Container\Container->make('TwitterControll...', Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5396): Illuminate\Foundation\Application->make('TwitterControll...')
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5385): Illuminate\Routing\ControllerDispatcher->makeController('TwitterControll...')
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-06-27 02:44:24] production.ERROR: exception 'ReflectionException' with message 'Class TwitterController does not exist' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:242
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(242): ReflectionClass->__construct('TwitterControll...')
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(212): Illuminate\Container\Container->build('TwitterControll...', Array)
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(586): Illuminate\Container\Container->make('TwitterControll...', Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5396): Illuminate\Foundation\Application->make('TwitterControll...')
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5385): Illuminate\Routing\ControllerDispatcher->makeController('TwitterControll...')
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-06-27 02:45:31] production.ERROR: exception 'ReflectionException' with message 'Class TwitterController does not exist' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:242
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(242): ReflectionClass->__construct('TwitterControll...')
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(212): Illuminate\Container\Container->build('TwitterControll...', Array)
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(586): Illuminate\Container\Container->make('TwitterControll...', Array)
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5396): Illuminate\Foundation\Application->make('TwitterControll...')
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5385): Illuminate\Routing\ControllerDispatcher->makeController('TwitterControll...')
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-06-27 02:46:06] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method TwitterController::getAfterFilters()' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5416
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:46:14] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method TwitterController::getAfterFilters()' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5416
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:48:07] production.ERROR: exception 'ErrorException' with message 'include(C:\xampp\htdocs\socialnukemain/app/libraries/SocialNuke/APIs/Twitter/twitteroauth.php): failed to open stream: No such file or directory' in C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php:377
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Illuminate\Exception\Handler->handleError(2, 'include(C:\\xamp...', 'C:\\xampp\\htdocs...', 377, Array)
+#1 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(377): Composer\Autoload\includeFile()
+#2 C:\xampp\htdocs\socialnukemain\vendor\composer\ClassLoader.php(269): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('TwitterOAuth')
+#4 C:\xampp\htdocs\socialnukemain\app\controllers\TwitterController.php(8): spl_autoload_call('TwitterOAuth')
+#5 [internal function]: TwitterController->showTwitter()
+#6 C:\xampp\htdocs\socialnukemain\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5401): Illuminate\Routing\Controller->callAction('showTwitter', Array)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(5389): Illuminate\Routing\ControllerDispatcher->call(Object(TwitterController), Object(Illuminate\Routing\Route), 'showTwitter')
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4638): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'TwitterControll...', 'showTwitter')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4948): call_user_func_array(Object(Closure), Array)
+#12 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4663): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#22 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2014-06-27 02:48:21] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\BaseController' not found' in C:\xampp\htdocs\socialnukemain\app\controllers\TwitterController.php:6
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:52:26] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\Eloquent' not found' in C:\xampp\htdocs\socialnukemain\app\models\SocialNuke\APIs\Twitter\TwitterOAuth.php:18
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:52:41] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\Eloquent' not found' in C:\xampp\htdocs\socialnukemain\app\models\SocialNuke\APIs\Twitter\TwitterOAuth.php:18
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-27 02:53:03] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\OAuthSignatureMethod_HMAC_SHA1' not found' in C:\xampp\htdocs\socialnukemain\app\models\SocialNuke\APIs\Twitter\TwitterOAuth.php:168
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-29 17:27:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\OAuthSignatureMethod_HMAC_SHA1' not found' in C:\xampp\htdocs\socialnukemain\app\models\SocialNuke\APIs\Twitter\TwitterOAuth.php:168
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-06-29 17:28:06] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php:5304
+Stack trace:
+#0 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4671): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4659): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(4651): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(706): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(687): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(1144): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7258): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#7 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7855): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(7802): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(10814): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\socialnukemain\bootstrap\compiled.php(648): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\socialnukemain\public\index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-06-29 17:28:24] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SocialNuke\APIs\Twitter\OAuthSignatureMethod_HMAC_SHA1' not found' in C:\xampp\htdocs\socialnukemain\app\models\SocialNuke\APIs\Twitter\TwitterOAuth.php:168
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

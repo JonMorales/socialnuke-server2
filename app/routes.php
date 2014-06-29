@@ -37,8 +37,4 @@ Route::get('FBlogin-test', function()
 });
 
 /* Settings Page Test code */
-Route::get('twitter', function()
-{
-	
-    return View::make('twitter');
-});
+Route::get('twitter', 'TwitterController@showTest');
