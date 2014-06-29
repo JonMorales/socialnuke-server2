@@ -3,8 +3,22 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends Eloquent {
 
+	/*
+	* Instance variables for user
+	**/
+	private $email;
+	private $fbToken;
+	private $fbActivation;
+	private $instaToken;
+	private $instaActivation;
+	private $twitterToken;
+	private $twitterActivation;
+	private $snapName;
+	private $snapPass;
+	private $snapAct;
+	private $phoneAct;
 	/**
 	 * The database table used by the model.
 	 *
@@ -12,72 +26,65 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'users';
 
+	protected $primaryKey = 'email';
+
+	protected $fillabe = array(
+		'facebookToken',
+		'facebookActivation',
+		'instagramToken',
+		'instagramActivation',
+		'twitterToken',
+		'twitterActivation',
+		'snapchatUsername',
+		'snapchatPassword',
+		'snapchatActivation',
+		'phoneActivation');
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
-	protected $hidden = array('password');
+	protected $hidden = array('snapchatPassword');
 
-	/**
-	 * Get the unique identifier for the user.
-	 *
-	 * @return mixed
-	 */
-	public function getAuthIdentifier()
+	/*
+
+	public function _construct(
+		$email = 'email',
+		$token = 'token',
+		$fbActivation=false,
+		$instaToken='instaToken',
+		$instaActivation=false,
+		$twitterToken='twitterToken',
+		$twitterActivation=false,
+		$snapName='snapName',
+		$snapPass='snapPass',
+		$snapAct=false,
+		$phoneAct=false
+		)
 	{
-		return $this->getKey();
+		
+		$this->email = $email;
+		$this->fbtoken = $token;
+		$this->fbActivation=$fbActivation;
+		$this->instaToken=$instaToken;
+		$this->instaActivation=$instActivation;
+		$this->twitterToken=$twitterToken;
+		$this->twitterActivation=$twitterActivation;
+		$this->snapName=$snapName;
+		$this->snapPass=$snapPass;
+		$this->snapAct=$snapAct;
+		$this->phoneAct=$phoneAct;
+		
+		//echo 'poop';
+	}*/
+
+	public function getStuff()
+	{
+		echo 'poop';
 	}
 
-	/**
-	 * Get the password for the user.
-	 *
-	 * @return string
-	 */
-	public function getAuthPassword()
+	public function info()
 	{
-		return $this->password;
+		return $this->attributes;
 	}
-
-	/**
-	 * Get the token value for the "remember me" session.
-	 *
-	 * @return string
-	 */
-	public function getRememberToken()
-	{
-		return $this->remember_token;
-	}
-
-	/**
-	 * Set the token value for the "remember me" session.
-	 *
-	 * @param  string  $value
-	 * @return void
-	 */
-	public function setRememberToken($value)
-	{
-		$this->remember_token = $value;
-	}
-
-	/**
-	 * Get the column name for the "remember me" token.
-	 *
-	 * @return string
-	 */
-	public function getRememberTokenName()
-	{
-		return 'remember_token';
-	}
-
-	/**
-	 * Get the e-mail address where password reminders are sent.
-	 *
-	 * @return string
-	 */
-	public function getReminderEmail()
-	{
-		return $this->email;
-	}
-
 }

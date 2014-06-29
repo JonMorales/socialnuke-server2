@@ -46,7 +46,7 @@ return array(
 
 	'connections' => array(
 
-		'test' => array(
+		'socialnukeserver' => array(
 			'driver'	=> 	'mysql',
 			'host'		=>	'localhost',
 			'database'	=>	'database',
@@ -66,7 +66,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'test',
+			'database'  => 'socialnukeserver',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
