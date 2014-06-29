@@ -12,15 +12,11 @@
 */
 Route::model('user', 'User');
 
-/* Facebook Login Test code  - Inserted by Ricky */
-Route::get('FBlogin-test', 'LoginController@makeLogin');
-
-
-//show pages
-//Route::get('login', array('uses' => 'HomeController@showLogin'));
-Route::get('registration', array('uses' => 'RegisterController@showRegistration'));
-Route::get('settings', 'InstagramController@showInstagram');
-Route::get('callback', 'InstagramController@callback');
+/*Facebook Login Test code  - Inserted by Ricky */
+Route::get('FBlogin-test', function()
+{
+	return View::make('FBlogin-test');
+});
 
 //handles post request from FBlogin-test.
 Route::post('login', function()
@@ -42,13 +38,41 @@ Route::post('login', function()
 	}
 });
 
-//handles form submissions
-Route::post('registration', array('uses' => 'RegisterController@doRegistration'));
-Route::post('settings', array('uses' => 'InstagramController@CreateInstagram'));
-Route::post('callback', array('uses' => 'InstagramController@unfollow'));
-
 Route::get('settings-test', function()
 {
-return View::make('settings-test');
+	return View::make('settings-test');
 });
 
+/*****Handles posts from settings page******/
+Route::post('settingsInstagram', function()
+{
+	//code
+});
+
+Route::post('settingsTwitter', function()
+{
+	//code
+});
+
+Route::post('settingsSnapchat', function()
+ {
+ 	//code
+ });
+
+
+
+/******Handles all the callback urls*******/
+Route::post('instagramCallback', function()
+{
+	//code
+});
+
+Route::post('twitterCallback', function()
+{
+	//code
+});
+
+Route::post('snapchatCallback', function()
+{
+	//code
+});
