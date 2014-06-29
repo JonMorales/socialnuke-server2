@@ -36,5 +36,10 @@ Route::get('FBlogin-test', function()
 	return View::make('FBlogin-test');
 });
 
+Route::get('settings-test', function()
+{
+	return View::make('settings-test');
+});
+
 /* Settings Page Test code */
 Route::get('twitter', 'TwitterController@showTest');
