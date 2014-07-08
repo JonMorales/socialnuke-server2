@@ -152,6 +152,8 @@
                             if(status === "success") {
                                 if(data['success']) {
                                     self._parent.callback();
+                                    var URL = data['redirect'];
+                                    window.location.href = URL;
                                 }
                                 else {
                                     alert('Please try again');

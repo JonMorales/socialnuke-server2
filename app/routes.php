@@ -11,68 +11,103 @@
 |
 */
 Route::model('user', 'User');
+Route::model('insta', 'Instagram');
 
 /*Facebook Login Test code  - Inserted by Ricky */
 Route::get('FBlogin-test', function()
-{
-	return View::make('FBlogin-test');
-});
+	{
+		return View::make('FBlogin-test');
+	});
 
 //handles post request from FBlogin-test.
 Route::post('login', function()
-{	
-	$email = $_REQUEST['email'];
-	$token = $_REQUEST['FBtoken'];
-	if($user = User::find($email)==true)
-	{
-		$user = User::find($email);
-		echo $user;
-	}
-	else
-	{
-		$user = new User();
-		$user->email = $email;
-		$user->facebookToken = $token;
-		$user->save();
-		echo $user;
-	}
-});
+	{	
+		//catches the info
+		$email = $_REQUEST['email'];
+		$token = $_REQUEST['FBtoken'];
+
+		//checks to see if user exists in DB
+		if($user = User::find($email)==true)
+		{
+			$user = User::find($email);
+			echo $user;
+		}
+		else
+		{
+			$user = new User();
+			$user->email = $email;
+			$user->facebookToken = $token;
+			$user->save();
+			echo $user;
+		}
+	});
 
 Route::get('settings-test', function()
-{
-	return View::make('settings-test');
-});
+	{
+		return View::make('settings-test');
+	});
 
 /*****Handles posts from settings page******/
+
 Route::post('settingsInstagram', function()
-{
-	//code
-});
+	{	
+		//creates new instagram object 
+		$insta = new Instagram(array(
+			'apiKey' => 'cdb1435d1d8747cdba5d79788011bf66',
+			'apiSecret' =>	'6e8c792d25e04ff79f03e6c3cc5b076f',
+			'apiCallback' =>	'http://localhost.socialnukemain.com/instagramCallback'
+		));
+
+		//set redirect URL
+		$redirect = $insta->getLoginUrl(array(
+			'basic',
+			'relationships'
+		));
+
+		//saves instagram object in session
+		Session::put('instagram', $insta);
+
+		$response['redirect'] = $redirect;
+		$response['success'] = true;
+		return json_encode($response);
+	});
 
 Route::post('settingsTwitter', function()
-{
-	//code
-});
+	{
+		//code
+	});
 
 Route::post('settingsSnapchat', function()
- {
- 	//code
- });
+ 	{
+ 		//code
+ 	});
 
+/************Handles all the callback urls*************/
+Route::get('instagramCallback', function()
+	{
+		//retrieves instagram object from session
+		$insta = Session::get('instagram');
 
+		//retrieves the access token
+		$code = $_GET['code'];	
+		$data = $insta->getOAuthToken($code);
 
-/******Handles all the callback urls*******/
-Route::post('instagramCallback', function()
+		//sets access token in instagram object
+		$insta->setAccessToken($data);
+
+		//saves updated instagram object in session
+		Session::put('instagram', $insta);
+		
+		//test to see whether Instagram works
+		'Your username is: ' . $data->user->username;
+	});
+
+Route::get('twitterCallback', function()
 {
 	//code
 });
 
-Route::post('twitterCallback', function()
-{
-	//code
-});
-
-Route::post('snapchatCallback', function()
+Route::get('snapchatCallback', function()
 {
 	//code
 });
