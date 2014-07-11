@@ -147,6 +147,8 @@
                                     // window.location.href = data['redirect'];
                                     console.log(data);
                                     self._parent.callback();
+                                    var URL = data['redirect'];
+                                    window.location.href = URL;
                                 }
                                 else {
                                     alert('Please try again');
