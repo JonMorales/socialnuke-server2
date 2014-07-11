@@ -11,6 +11,7 @@
 |
 */
 Route::model('user', 'User');
+Route::model('twitter', 'TwitterOAuth');
 
 /*Facebook Login Test code  - Inserted by Ricky */
 Route::get('FBlogin-test', function()
@@ -49,9 +50,28 @@ Route::post('settingsInstagram', function()
 	//code
 });
 
+Route::get('callback', function()
+{
+	
+
+});
+
 Route::post('settingsTwitter', function()
 {
-	//code
+	try {
+		$twitter = new TwitterOAuth('hPt7qgK7t1gutuGvbpKRtw', 'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E');
+		$request_token = $twitter->getRequestToken('http://localhost.socialnukemain.com/callback');
+		$token = $request_token['oauth_token'];
+	    $url = $twitter->getAuthorizeURL($token);
+	    
+	    $response['success'] = true;
+	    $response['redirect'] = $url;
+	    $response['user'] = $_REQUEST;
+	    return $response;
+
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	}
 });
 
 Route::post('settingsSnapchat', function()

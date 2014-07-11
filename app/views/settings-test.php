@@ -100,16 +100,9 @@
                 Api.prototype.sendRequest = function() {
                     var request = new AjaxRequest();
 
-                    /* Mock object */
-                    var user = {
-                        email: "fakeEmail@test.com",
-                        FBtoken : "testToken12345"
-                    }
-
                     request.initialize('settings' + this.socNetwork, user, this.callback, this);
                 }
                 Api.prototype.callback = function() {
-                    console.log('the callback is working');
                     this._input.removeClass('hidden');
                 }
 
@@ -151,6 +144,8 @@
                         success: function(data, status, jqXhr){
                             if(status === "success") {
                                 if(data['success']) {
+                                    // window.location.href = data['redirect'];
+                                    console.log(data);
                                     self._parent.callback();
                                 }
                                 else {
