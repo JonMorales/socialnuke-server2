@@ -11,6 +11,7 @@
 |
 */
 Route::model('user', 'User');
+Route::model('twitter', 'TwitterOAuth');
 Route::model('insta', 'Instagram');
 
 /*Facebook Login Test code  - Inserted by Ricky */
@@ -94,11 +95,41 @@ Route::post('settingsInstagram', function()
 		return json_encode($response);
 	});
 
-Route::post('settingsTwitter', function()
-	{
-		//code
-	});
+Route::get('callback', function()
+{
+	
 
+});
+
+Route::post('settingsTwitter', function()
+{
+	try {
+		//creates new TwitterOAuth object 
+		$twitter = new TwitterOAuth(
+			'hPt7qgK7t1gutuGvbpKRtw',
+			'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E'
+		);
+
+		// Retrieve temporary credentials and store temporary OAuth token
+		$temporary_credentials = $twitter->getRequestToken('http://localhost.socialnukemain.com/twitterCallback');
+		$temporary_token = $temporary_credentials['oauth_token'];
+
+		// Store temporary credentials into session for later use in callback
+	    Session::put('twitter_temp_cred', $temporary_credentials);
+
+		// Retrieve redirect URL using temporary OAuth token		
+	    $redirect = $twitter->getAuthorizeURL($temporary_token);
+	    
+	    // Send redirect URL back to mobile device
+	    $response['redirect'] = $redirect;
+	    $response['success'] = true;
+	    return json_encode($response);
+
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	}
+});
+	
 Route::post('settingsSnapchat', function()
  	{
  		//code
@@ -125,14 +156,48 @@ Route::get('instagramCallback', function()
 		echo '<pre>';
 			print_r($likes);
 		echo '<pre>';
+
 	});
 
 Route::get('twitterCallback', function()
-{
-	//code
-});
+	{
+
+		$temporary_credentials = Session::get('twitter_temp_cred');
+		
+		// Build a new TwitterOAuth object using temporary credentials
+		$twitter = new TwitterOAuth(
+			'hPt7qgK7t1gutuGvbpKRtw',
+			'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
+			$temporary_credentials['oauth_token'],
+			$temporary_credentials['oauth_token_secret']
+		);
+
+		//retrieves the final access token
+		$final_credentials = $twitter->getAccessToken(
+			$_GET['oauth_verifier'],
+			$temporary_credentials['oauth_token'],
+			$temporary_credentials['oauth_token_secret']
+		);
+
+		// Build a final TwitterOAuth object using final credentials
+		$final_connection = new TwitterOAuth(
+			'hPt7qgK7t1gutuGvbpKRtw',
+			'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
+			$final_credentials['oauth_token'],
+			$final_credentials['oauth_token_secret']
+		);
+
+		Session::put('twitter', $final_connection);
+
+		return View::make('settings-test');
+
+		/*
+		$destroyUser = $final_connection->post('friendships/destroy', array('screen_name' => 'steforzech'));
+		print_r($destroyUser);
+		*/
+	});
 
 Route::get('snapchatCallback', function()
 {
-	//code
+	// code
 });

@@ -1,8 +1,5 @@
 <?php
 
-namespace SocialNuke\APIs\Twitter;
-
-use SocialNuke\APIs\Twitter\OAuth;
 /*
  * Abraham Williams (abraham@abrah.am) http://abrah.am
  *
@@ -15,7 +12,8 @@ use SocialNuke\APIs\Twitter\OAuth;
 /**
  * Twitter OAuth class
  */
-class TwitterOAuth {
+
+class TwitterOAuth extends Eloquent {
   /* Contains the last HTTP status code returned. */
   public $http_code;
   /* Contains the last API call. */
@@ -153,7 +151,7 @@ class TwitterOAuth {
   /**
    * DELETE wrapper for oAuthReqeust.
    */
-  public function delete($url, $parameters = array()) {
+  public function _delete($url, $parameters = array()) {
     $response = $this->oAuthRequest($url, 'DELETE', $parameters);
     if ($this->format === 'json' && $this->decode_json) {
       return json_decode($response);
@@ -240,7 +238,7 @@ class TwitterOAuth {
     if (!empty($i)) {
       $key = str_replace('-', '_', strtolower(substr($header, 0, $i)));
       $value = trim(substr($header, $i + 2));
-      $this->http_header[$key] = $value;
+      // $this->http_header[$key] = $value;
     }
     return strlen($header);
   }
