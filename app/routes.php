@@ -110,7 +110,10 @@ Route::post('settingsTwitter', function()
 	
 Route::post('settingsSnapchat', function()
  	{
- 		//code
+ 		// Send redirect URL back to mobile device
+	    $response['redirect'] = 'snapchatLogin';
+	    $response['success'] = true;
+		
  	});
 
 /************Handles all the callback urls*************/
@@ -173,5 +176,10 @@ Route::get('twitterCallback', function()
 
 Route::get('snapchatCallback', function()
 {
-	// code
+	try {
+
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	}
+
 });
