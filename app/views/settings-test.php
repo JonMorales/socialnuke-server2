@@ -154,6 +154,7 @@
                                     self._parent.callback();
                                     var URL = data['redirect'];
                                     window.location.href = URL;
+                                    //alert(foo);
                                 }
                                 else {
                                     alert('Please try again');

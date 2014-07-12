@@ -28,18 +28,18 @@ Route::post('login', function()
 
 		//checks to see if user exists in DB
 		if($user = User::find($email)==true)
-		{
-			$user = User::find($email);
-			echo $user;
-		}
+			{
+				$user = User::find($email);
+			}
 		else
-		{
-			$user = new User();
-			$user->email = $email;
-			$user->facebookToken = $token;
-			$user->save();
-			echo $user;
-		}
+			{
+				$user = new User();
+				$user->email = $email;
+				$user->facebookToken = $token;
+				$user->save();
+			}
+
+		Session::put('user', $user);
 	});
 
 Route::get('settings-test', function()
@@ -48,26 +48,48 @@ Route::get('settings-test', function()
 	});
 
 /*****Handles posts from settings page******/
-
 Route::post('settingsInstagram', function()
-	{	
-		//creates new instagram object 
+	{	 
+		//creates instagram object
 		$insta = new Instagram(array(
 			'apiKey' => 'cdb1435d1d8747cdba5d79788011bf66',
 			'apiSecret' =>	'6e8c792d25e04ff79f03e6c3cc5b076f',
 			'apiCallback' =>	'http://localhost.socialnukemain.com/instagramCallback'
 		));
 
-		//set redirect URL
-		$redirect = $insta->getLoginUrl(array(
-			'basic',
-			'relationships'
-		));
+		$user = User::find('poop@poop.com');
 
-		//saves instagram object in session
-		Session::put('instagram', $insta);
+		//this line will be used in actual app
+		//$user = Session::get('user');
 
-		$response['redirect'] = $redirect;
+		$instaToken = $user->instagramToken;
+		
+		if($instaToken!=null)
+			{
+				//sets token equal to element in database
+				$token = $user->instagramToken;
+
+				$insta->setAccessToken($token);
+				$token = $insta->getAccessToken();
+				Session::put('instagram', $insta);
+				
+				//creates part of response object
+				$response['redirect'] = 'http://localhost.socialnukemain.com/instagramCallback';
+			}
+		
+		else
+			{	
+				//sets redirect URL
+				$redirect = $insta->getLoginUrl(array(
+					'basic',
+					'relationships'
+				));
+
+				//creates part of response object
+				$response['redirect'] = $redirect;
+				Session::put('instagram', $insta);
+			}
+		//creates rest of response object and returns it
 		$response['success'] = true;
 		return json_encode($response);
 	});
@@ -87,7 +109,7 @@ Route::get('instagramCallback', function()
 	{
 		//retrieves instagram object from session
 		$insta = Session::get('instagram');
-
+		
 		//retrieves the access token
 		$code = $_GET['code'];	
 		$data = $insta->getOAuthToken($code);
@@ -97,9 +119,12 @@ Route::get('instagramCallback', function()
 
 		//saves updated instagram object in session
 		Session::put('instagram', $insta);
-		
+
 		//test to see whether Instagram works
-		'Your username is: ' . $data->user->username;
+		$likes=$insta->getUserLikes();
+		echo '<pre>';
+			print_r($likes);
+		echo '<pre>';
 	});
 
 Route::get('twitterCallback', function()
