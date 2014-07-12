@@ -174,6 +174,17 @@ Route::get('twitterCallback', function()
 		*/
 	});
 
+
+/*=====================================
+SnapChat Login and Callback
+======================================*/
+
+Route::get('snapchatLogin', function()
+{
+	return View::make('snapchat-login');
+
+});
+
 Route::get('snapchatCallback', function()
 {
 	try {
