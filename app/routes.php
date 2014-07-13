@@ -58,12 +58,13 @@ Route::post('settingsInstagram', function()
 			'apiCallback' =>	'http://localhost.socialnukemain.com/instagramCallback'
 		));
 
-		$user = User::find('poop@poop.com');
-
+		$user = User::find('user0@user.com');
+		Session::put('user', $user);
 		//this line will be used in actual app
 		//$user = Session::get('user');
 
 		$instaToken = $user->instagramToken;
+
 		
 		if($instaToken!=null)
 			{
@@ -71,11 +72,12 @@ Route::post('settingsInstagram', function()
 				$token = $user->instagramToken;
 
 				$insta->setAccessToken($token);
+
 				$token = $insta->getAccessToken();
 				Session::put('instagram', $insta);
 				
 				//creates part of response object
-				$response['redirect'] = 'http://localhost.socialnukemain.com/instagramCallback';
+				$response['redirect'] = 'http://localhost.socialnukemain.com/settings-test';
 			}
 		
 		else
@@ -136,26 +138,39 @@ Route::post('settingsSnapchat', function()
  	});
 
 /************Handles all the callback urls*************/
+##### MOMO'S USER ID: 625348784 #####
 Route::get('instagramCallback', function()
 	{
-		//retrieves instagram object from session
-		$insta = Session::get('instagram');
-		
-		//retrieves the access token
-		$code = $_GET['code'];	
-		$data = $insta->getOAuthToken($code);
+		try {
+			//retrieves instagram object from session
+			$insta = Session::get('instagram');
+			$user = Session::get('user');
+			
+			//retrieves the access token
+			$code = $_GET['code'];	
+			$data = $insta->getOAuthToken($code);
 
-		//sets access token in instagram object
-		$insta->setAccessToken($data);
+			//sets access token in instagram object
+			$insta->setAccessToken($data);
+			$token = $insta->getAccessToken();
 
-		//saves updated instagram object in session
-		Session::put('instagram', $insta);
+			$user->instagramToken = $token;
+			$user->save();
 
-		//test to see whether Instagram works
-		$likes=$insta->getUserLikes();
-		echo '<pre>';
-			print_r($likes);
-		echo '<pre>';
+			//saves updated instagram object in session
+			Session::put('instagram', $insta);
+
+			//test to see whether Instagram works
+			//$insta->modifyRelationship('unfollow', 625348784);
+			$relations = $insta->getUserRelationship(625348784);
+
+			echo '<pre>';
+				print_r($relations);
+			echo '<pre>';
+
+		} catch(Exception $e) {
+			echo $e->getMessage();
+		}
 
 	});
 

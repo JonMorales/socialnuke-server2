@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration {
 			$table->string('instagramToken', 64)->nullable();
 			$table->boolean('instagramActivation')->nullable();
 			$table->string('twitterToken', 64)->nullable();
+			$table->string('twitterSecret', 64)->nullable();
 			$table->boolean('twitterActivation')->nullable();
 			$table->string('snapchatUsername', 64)->nullable();
 			$table->string('snapchatPassword', 64)->nullable();
