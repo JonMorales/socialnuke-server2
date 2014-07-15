@@ -149,7 +149,7 @@
                                     self._parent.callback();
                                     var URL = data['redirect'];
                                     window.location.href = URL;
-                                    //alert(foo);
+                                    //alert(URL);
                                 }
                                 else {
                                     alert('Please try again');

@@ -58,14 +58,14 @@ Route::post('settingsInstagram', function()
 			'apiCallback' =>	'http://localhost.socialnukemain.com/instagramCallback'
 		));
 
+		/*** FOR TEST PURPOSES ONLY ***/
 		$user = User::find('user0@user.com');
 		Session::put('user', $user);
-		//this line will be used in actual app
+
+		#### this line will be used in actual app ####
 		//$user = Session::get('user');
 
 		$instaToken = $user->instagramToken;
-
-		
 		if($instaToken!=null)
 			{
 				//sets token equal to element in database
@@ -112,18 +112,42 @@ Route::post('settingsTwitter', function()
 			'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E'
 		);
 
-		// Retrieve temporary credentials and store temporary OAuth token
-		$temporary_credentials = $twitter->getRequestToken('http://localhost.socialnukemain.com/twitterCallback');
-		$temporary_token = $temporary_credentials['oauth_token'];
+		/*** TEST CODE ONLY* **/
+		$user = User::find('user3@user.com');
+		Session::put('user', $user);
 
-		// Store temporary credentials into session for later use in callback
-	    Session::put('twitter_temp_cred', $temporary_credentials);
+		#### this is what we'll user in the actual app ###
+		//$user = Session::find('user');
+		$token = $user->twitterToken;
+		$secret = $user->twitterSecret;
 
-		// Retrieve redirect URL using temporary OAuth token		
-	    $redirect = $twitter->getAuthorizeURL($temporary_token);
-	    
-	    // Send redirect URL back to mobile device
-	    $response['redirect'] = $redirect;
+		if($token&&$secret!=null) 
+			{
+				$final_connection = new TwitterOAuth(
+					'hPt7qgK7t1gutuGvbpKRtw',
+					'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
+					$token,
+					$secret
+				);
+				$destroyUser = $final_connection->post('friendships/destroy', array('screen_name' => '@realrickmorales'));
+				$response['redirect'] = 'localhost.socialnukemain.com/settings-test';				
+			}
+		else 
+			{
+				// Retrieve temporary credentials and store temporary OAuth token
+				$temporary_credentials = $twitter->getRequestToken('http://localhost.socialnukemain.com/twitterCallback');
+				$temporary_token = $temporary_credentials['oauth_token'];
+
+				// Store temporary credentials into session for later use in callback
+			    Session::put('twitter_temp_cred', $temporary_credentials);
+
+				// Retrieve redirect URL using temporary OAuth token		
+			    $redirect = $twitter->getAuthorizeURL($temporary_token);
+			    
+			    // Send redirect URL back to mobile device
+			    $response['redirect'] = $redirect;
+	    	}
+
 	    $response['success'] = true;
 	    return json_encode($response);
 
@@ -171,12 +195,13 @@ Route::get('instagramCallback', function()
 		} catch(Exception $e) {
 			echo $e->getMessage();
 		}
-
 	});
 
 Route::get('twitterCallback', function()
 	{
 
+		try {
+		$user = Session::get('user');
 		$temporary_credentials = Session::get('twitter_temp_cred');
 		
 		// Build a new TwitterOAuth object using temporary credentials
@@ -202,14 +227,22 @@ Route::get('twitterCallback', function()
 			$final_credentials['oauth_token_secret']
 		);
 
+		$token = $final_credentials['oauth_token'];
+		$secret = $final_credentials['oauth_token_secret'];
+		
+		$user->twitterToken = $token;
+		$user->twitterSecret = $secret;
+		$user->save();
+
 		Session::put('twitter', $final_connection);
 
 		return View::make('settings-test');
-
 		/*
 		$destroyUser = $final_connection->post('friendships/destroy', array('screen_name' => 'steforzech'));
 		print_r($destroyUser);
-		*/
+		*/ } catch (Exception $e) {
+		echo $e->getMessage();
+		}
 	});
 
 Route::get('snapchatCallback', function()
