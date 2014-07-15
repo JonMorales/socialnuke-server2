@@ -4,6 +4,7 @@
  * @file
  *   Provides an implementation of the undocumented Snapchat API.
  */
+
 class Snapchat extends SnapchatAgent {
 
 	/**

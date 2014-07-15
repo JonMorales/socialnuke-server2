@@ -5,7 +5,7 @@
  *   Provides the Snapchat class with a lower-level API layer to handle
  *   requests and decrypt responses.
  */
-abstract class SnapchatAgent {
+abstract class SnapchatAgent extends Eloquent {
 
 	/*
 	 * App version (as of 2013-11-20). Before updating this value, confirm
