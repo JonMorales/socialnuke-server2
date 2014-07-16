@@ -160,7 +160,7 @@ Route::post('settingsTwitter', function()
 Route::post('settingsSnapchat', function()
  	{
  		/*** TEST LINE ONLY ***/
- 		$user = User::find('user0@user.com');
+ 		$user = User::find('user3@user.com');
  		Session::put('user', $user);
 
  		/*** THIS WILL BE USED IN ACTUALY APP ***/
@@ -169,16 +169,8 @@ Route::post('settingsSnapchat', function()
  		$password = $user->snapchatPassword;
  		if($username&&$password!=null) 
  			{	
- 				$response['redirect'] = 'snapchatLogin';
- 				$snapchat = new Snapchat($_REQUEST['user']=$username, $_REQUEST['password']=$password);
+ 				$snapchat = new Snapchat($username, $password);
  				Session::put('snapchat', $snapchat);
- 				/*if ($snapchat->returnSuccess()) 
- 					{ 
-						$response['success'] = true;
-						$response['redirect'] = $snapchat;
-						Session::put('snapchat', $snapchat);
-						Session::put('snapchatActivated', true);
-					}*/
  			}
  		else 
  			{
@@ -280,22 +272,25 @@ SnapChat Login and Callback
 
 Route::get('snapchatLogin', function()
 {
-	$snapchat = Session::get('snapchat');
-	//$friends = $snapchat->getFriends();
-	echo '<pre>';
-		print_r($snapchat);
-	echo '<pre>';
-	//return View::make('snapchat-login');
+	return View::make('snapchat-login');
 });
 
 Route::post('snapchatConnect', function()
 {	
 	try {
+		$user = Session::get('user');
 		$snapchat = new Snapchat($_REQUEST['user'], $_REQUEST['password']);
 
 		if ($snapchat->returnSuccess()) { 
 			$response['success'] = true;
 			$response['snapchat'] = $snapchat;
+
+			//takes the info and saves it to DB
+			$user->snapchatUsername = $_REQUEST['user'];
+			$user->snapchatPassword = $_REQUEST['password'];
+			$user->save();
+
+			//puts authenticated snapchat object in session
 			Session::put('snapchat', $snapchat);
 			Session::put('snapchatActivated', true);
 		}
@@ -304,7 +299,6 @@ Route::post('snapchatConnect', function()
 			$response['snapchat'] = 'failure';
 		}
 		return json_encode($response);
-
 	} catch (Exception $e) {
 		echo $e->getMessage();
 	}
