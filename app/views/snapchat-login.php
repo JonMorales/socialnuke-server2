@@ -168,7 +168,7 @@
                     request.initialize('snapchatConnect', this.user, this.callback, this);   
                 }
                 snapchatForm.callback = function() {
-
+                    window.location.href = 'settings-test';
                 }
                 snapchatForm.initialize();
 
@@ -184,7 +184,6 @@
                     this.connect();
                 }
                 AjaxRequest.prototype.connect = function() {
-                    console.log(this.dataToSend);
                     var self = this;
                     $.ajax({
                         async: false,
@@ -205,14 +204,11 @@
                         success: function(data, status, jqXhr){
                             if(status === "success") {
                                 if(data['success']) {
-                                    // window.location.href = data['redirect'];
-                                    console.log(data);
                                     self._parent.callback();
-                                    // var URL = data['redirect'];
-                                    // window.location.href = URL;
+                                    window.localStorage.snapchatActivated = true;
                                 }
                                 else {
-                                    alert('Please try again');
+                                    alert('Incorrect username or password.');
                                 }
                             }
                             else {

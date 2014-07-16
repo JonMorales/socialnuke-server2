@@ -75,6 +75,20 @@ class Snapchat extends SnapchatAgent {
 			$this->username = $username;
 		}
 	}
+	/**
+	 * Returns true if oauth_token is set
+	 *
+	 * @return boolean
+	 *   The current state of the object
+	 */
+	public function returnSuccess() {
+		if($this->auth_token) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 
 	/**
 	 * Handles login.

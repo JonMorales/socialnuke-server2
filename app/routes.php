@@ -190,18 +190,18 @@ Route::post('snapchatConnect', function()
 {	
 	try {
 		$snapchat = new Snapchat($_REQUEST['user'], $_REQUEST['password']);
-		$response['success'] = true;
-		$response['snapchat'] = $snapchat;
-		return $response;
-	} catch (Exception $e) {
-		echo $e->getMessage();
-	}
 
-});
-
-Route::get('snapchatCallback', function()
-{
-	try {
+		if ($snapchat->returnSuccess()) { 
+			$response['success'] = true;
+			$response['snapchat'] = $snapchat;
+			Session::put('snapchat', $snapchat);
+			Session::put('snapchatActivated', true);
+		}
+		else {
+			$response['success'] = false;
+			$response['snapchat'] = 'failure';
+		}
+		return json_encode($response);
 
 	} catch (Exception $e) {
 		echo $e->getMessage();
