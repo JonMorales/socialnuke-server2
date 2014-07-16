@@ -167,8 +167,8 @@
                     var request = new AjaxRequest();
                     request.initialize('snapchatConnect', this.user, this.callback, this);   
                 }
-                snapchatForm.callback = function() {
-                    window.location.href = 'settings-test';
+                snapchatForm.callback = function(data) {
+                    window.location.href = data['redirect'];
                 }
                 snapchatForm.initialize();
 
@@ -204,8 +204,8 @@
                         success: function(data, status, jqXhr){
                             if(status === "success") {
                                 if(data['success']) {
-                                    self._parent.callback();
-                                    window.localStorage.snapchatActivated = true;
+                                    self._parent.callback(data);
+                                    // window.localStorage.snapchatActivated = true;
                                 }
                                 else {
                                     alert('Incorrect username or password.');

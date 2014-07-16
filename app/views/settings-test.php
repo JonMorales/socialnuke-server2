@@ -102,8 +102,10 @@
 
                     request.initialize('settings' + this.socNetwork, user, this.callback, this);
                 }
-                Api.prototype.callback = function() {
-                    this._input.removeClass('hidden');
+                Api.prototype.callback = function(data) {
+                    console.log(data);
+                    var URL = data['redirect'];
+                    window.location.href = URL;
                 }
 
                 $('.api-container').each(function(){
@@ -144,12 +146,7 @@
                         success: function(data, status, jqXhr){
                             if(status === "success") {
                                 if(data['success']) {
-                                    // window.location.href = data['redirect'];
-                                    console.log(data);
-                                    self._parent.callback();
-                                    var URL = data['redirect'];
-                                    window.location.href = URL;
-                                    //alert(URL);
+                                    self._parent.callback(data);
                                 }
                                 else {
                                     alert('Please try again');

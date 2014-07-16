@@ -15,10 +15,10 @@ Route::model('twitter', 'TwitterOAuth');
 Route::model('insta', 'Instagram');
 Route::model('snapchat', 'Snapchat');
 
-/*Facebook Login Test code  - Inserted by Ricky */
-Route::get('FBlogin-test', function()
+/*Initial Login code */
+Route::get('/', function()
 	{
-		return View::make('FBlogin-test');
+		return View::make('login');
 	});
 
 //handles post request from FBlogin-test.
@@ -42,6 +42,10 @@ Route::post('login', function()
 			}
 
 		Session::put('user', $user);
+		$response['success'] = true;
+		$response['redirect'] = 'settings-test';
+		// $response[]
+		return json_encode($response);
 	});
 
 Route::get('settings-test', function()
@@ -97,12 +101,6 @@ Route::post('settingsInstagram', function()
 		$response['success'] = true;
 		return json_encode($response);
 	});
-
-Route::get('callback', function()
-{
-	
-
-});
 
 Route::post('settingsTwitter', function()
 {
@@ -267,6 +265,7 @@ Route::post('snapchatConnect', function()
 		if ($snapchat->returnSuccess()) { 
 			$response['success'] = true;
 			$response['snapchat'] = $snapchat;
+			$response['redirect'] = 'settings-test';
 			Session::put('snapchat', $snapchat);
 			Session::put('snapchatActivated', true);
 		}
