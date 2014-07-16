@@ -159,8 +159,32 @@ Route::post('settingsTwitter', function()
 	
 Route::post('settingsSnapchat', function()
  	{
- 		// Send redirect URL back to mobile device
-	    $response['redirect'] = 'snapchatLogin';
+ 		/*** TEST LINE ONLY ***/
+ 		$user = User::find('user0@user.com');
+ 		Session::put('user', $user);
+
+ 		/*** THIS WILL BE USED IN ACTUALY APP ***/
+ 		//$user = Session::get('user');
+ 		$username = $user->snapchatUsername;
+ 		$password = $user->snapchatPassword;
+ 		if($username&&$password!=null) 
+ 			{	
+ 				$response['redirect'] = 'snapchatLogin';
+ 				$snapchat = new Snapchat($_REQUEST['user']=$username, $_REQUEST['password']=$password);
+ 				Session::put('snapchat', $snapchat);
+ 				/*if ($snapchat->returnSuccess()) 
+ 					{ 
+						$response['success'] = true;
+						$response['redirect'] = $snapchat;
+						Session::put('snapchat', $snapchat);
+						Session::put('snapchatActivated', true);
+					}*/
+ 			}
+ 		else 
+ 			{
+ 				// Send redirect URL back to mobile device
+	    		$response['redirect'] = 'snapchatLogin';
+ 			}
 	    $response['success'] = true;
 		return json_encode($response);
  	});
@@ -256,7 +280,12 @@ SnapChat Login and Callback
 
 Route::get('snapchatLogin', function()
 {
-	return View::make('snapchat-login');
+	$snapchat = Session::get('snapchat');
+	//$friends = $snapchat->getFriends();
+	echo '<pre>';
+		print_r($snapchat);
+	echo '<pre>';
+	//return View::make('snapchat-login');
 });
 
 Route::post('snapchatConnect', function()

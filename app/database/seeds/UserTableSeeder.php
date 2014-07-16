@@ -15,8 +15,8 @@ class UserTableSeeder extends Seeder
 			'twitterToken'	=>	'379541294-MFGRKdCeK8BxDSEb6sIsGcWudmtNZjbxQWOaXBQt',
 			'twitterSecret' => 'pL5VvIvdamHoJP8OOE60L05faz2EIZBOjIfZnurAiQfXh',
 			'twitterActivation' =>	'0',
-			'snapchatUsername'	=>	'assymcgee',
-			'snapchatPassword' =>	'ggggg',
+			'snapchatUsername'	=>	'jonmorales69',
+			'snapchatPassword' =>	'Ma121eY32',
 			'snapchatActivation' =>	'0',
 			'phoneActivation' =>	'0'
 		));
@@ -55,14 +55,14 @@ class UserTableSeeder extends Seeder
 			'facebookToken'	=>	'12345',
 			'facebookActivation' =>	'0',
 			'instagramToken'	=>	null,
-			'instagramActivation' =>	'0',
+			'instagramActivation' =>	null,
 			'twitterToken'	=> null,
 			'twitterSecret' => null,
-			'twitterActivation' =>	'0',
-			'snapchatUsername'	=>	'assymcgee',
-			'snapchatPassword' =>	'ggggg',
-			'snapchatActivation' =>	'0',
-			'phoneActivation' =>	'0'
+			'twitterActivation' =>	null,
+			'snapchatUsername'	=>	null,
+			'snapchatPassword' =>	null,
+			'snapchatActivation' =>	null,
+			'phoneActivation' =>	null
 		));
 	}
 
