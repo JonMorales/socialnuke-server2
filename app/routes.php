@@ -13,6 +13,7 @@
 Route::model('user', 'User');
 Route::model('twitter', 'TwitterOAuth');
 Route::model('insta', 'Instagram');
+Route::model('snapchat', 'Snapchat');
 
 /*Facebook Login Test code  - Inserted by Ricky */
 Route::get('FBlogin-test', function()
@@ -158,7 +159,10 @@ Route::post('settingsTwitter', function()
 	
 Route::post('settingsSnapchat', function()
  	{
- 		//code
+ 		// Send redirect URL back to mobile device
+	    $response['redirect'] = 'snapchatLogin';
+	    $response['success'] = true;
+		return json_encode($response);
  	});
 
 /************Handles all the callback urls*************/
@@ -245,7 +249,35 @@ Route::get('twitterCallback', function()
 		}
 	});
 
-Route::get('snapchatCallback', function()
+
+/*=====================================
+SnapChat Login and Callback
+======================================*/
+
+Route::get('snapchatLogin', function()
 {
-	// code
+	return View::make('snapchat-login');
+});
+
+Route::post('snapchatConnect', function()
+{	
+	try {
+		$snapchat = new Snapchat($_REQUEST['user'], $_REQUEST['password']);
+
+		if ($snapchat->returnSuccess()) { 
+			$response['success'] = true;
+			$response['snapchat'] = $snapchat;
+			Session::put('snapchat', $snapchat);
+			Session::put('snapchatActivated', true);
+		}
+		else {
+			$response['success'] = false;
+			$response['snapchat'] = 'failure';
+		}
+		return json_encode($response);
+
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	}
+
 });
