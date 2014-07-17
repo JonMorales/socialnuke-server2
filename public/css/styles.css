@@ -1,3 +1,58 @@
-.container{
+ /* Styles for the main page */
+
+#page-container {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#page-container .content {
 	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.validation-advice {
+    color: red;
+}
+
+/*========================================
+@Settings Page
+=========================================*/
+
+.button {
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 10px;
+    width: 10px;
+    margin: 0 auto 10px;
+}
+
+.button.active {
+    background: #000;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+/*========================================
+@Facebook Login Page
+=========================================*/
+#facebookForm .button {
+    width: auto;
+    height: auto;
+    border-radius: inherit;
+    border: inherit;
+}
+
+/*========================================
+@Snapchat Login Page
+=========================================*/
+#snapchatForm .button {
+    width: auto;
+    height: auto;
+    border-radius: inherit;
+    border: inherit;
 }

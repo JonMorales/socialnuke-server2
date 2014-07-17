@@ -44,7 +44,12 @@ Route::post('login', function()
 		Session::put('user', $user);
 		$response['success'] = true;
 		$response['redirect'] = 'settings-test';
-		// $response[]
+		$response['activation']['facebookActivation'] = $user->facebookActivation;
+		$response['activation']['instagramActivation'] = $user->instagramActivation;
+		$response['activation']['twitterActivation'] = $user->twitterActivation;
+		$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+		$response['activation']['phoneActivation'] = $user->phoneActivation;
+		
 		return json_encode($response);
 	});
 
