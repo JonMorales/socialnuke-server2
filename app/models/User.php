@@ -26,9 +26,10 @@ class User extends Eloquent {
 	 */
 	protected $table = 'users';
 
-	protected $primaryKey = 'email';
+	protected $primaryKey = 'id';
 
 	protected $fillabe = array(
+		'email',
 		'facebookToken',
 		'facebookActivation',
 		'instagramToken',

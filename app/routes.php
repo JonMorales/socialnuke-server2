@@ -24,33 +24,47 @@ Route::get('/', function()
 //handles post request from FBlogin-test.
 Route::post('login', function()
 	{	
-		//catches the info
-		$email = $_REQUEST['email'];
-		$token = $_REQUEST['FBtoken'];
+		Session::clear();
+		try {
 
-		//checks to see if user exists in DB
-		if($user = User::find($email)==true)
-			{
-				$user = User::find($email);
+			//catches the info
+			$email = $_REQUEST['email'];
+			$token = $_REQUEST['FBtoken'];
+
+			//checks to see if user exists in DB
+			$validator = Validator::make(
+				array('email' => $email),
+				array('email' => 'exists:users,email')
+			);
+
+			if($validator->passes()) {
+				$user = User::where('email', '=', $email)->first();
 			}
-		else
-			{
+			else {
 				$user = new User();
 				$user->email = $email;
 				$user->facebookToken = $token;
 				$user->save();
 			}
 
-		Session::put('user', $user);
-		$response['success'] = true;
-		$response['redirect'] = 'settings-test';
-		$response['activation']['facebookActivation'] = $user->facebookActivation;
-		$response['activation']['instagramActivation'] = $user->instagramActivation;
-		$response['activation']['twitterActivation'] = $user->twitterActivation;
-		$response['activation']['snapchatActivation'] = $user->snapchatActivation;
-		$response['activation']['phoneActivation'] = $user->phoneActivation;
-		
-		return json_encode($response);
+			Session::put('user', $user);
+			$response['user'] = $user;
+
+			$response['success'] = true;
+			$response['redirect'] = 'settings-test';
+			$response['activation']['facebookActivation'] = $user->facebookActivation;
+			$response['activation']['instagramActivation'] = $user->instagramActivation;
+			$response['activation']['twitterActivation'] = $user->twitterActivation;
+			$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+			$response['activation']['phoneActivation'] = $user->phoneActivation;
+
+			return $response;
+		}
+
+		catch (Exception $e) {
+			echo $e-getMessage();
+		}
+
 	});
 
 Route::get('settings-test', function()
@@ -68,26 +82,32 @@ Route::post('settingsInstagram', function()
 			'apiCallback' =>	'http://localhost.socialnukemain.com/instagramCallback'
 		));
 
-		/*** FOR TEST PURPOSES ONLY ***/
-		$user = User::find('user0@user.com');
-		Session::put('user', $user);
-
-		#### this line will be used in actual app ####
-		//$user = Session::get('user');
+		$user = Session::get('user');
 
 		$instaToken = $user->instagramToken;
 		if($instaToken!=null)
 			{
-				//sets token equal to element in database
+				// Sets token equal to element in database
 				$token = $user->instagramToken;
-
 				$insta->setAccessToken($token);
 
-				$token = $insta->getAccessToken();
+				// Stores instagram object in session
 				Session::put('instagram', $insta);
 				
-				//creates part of response object
-				$response['redirect'] = 'http://localhost.socialnukemain.com/settings-test';
+				// Update activation setting in user and session
+				$user->instagramActivation = 1;
+				$user->save();
+
+				// Update user in session
+				Session::put('user', $user);
+
+				// Creates part of the response object
+				$response['redirect'] = 'settings-test';
+				$response['activation']['facebookActivation'] = $user->facebookActivation;
+				$response['activation']['instagramActivation'] = $user->instagramActivation;
+				$response['activation']['twitterActivation'] = $user->twitterActivation;
+				$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+				$response['activation']['phoneActivation'] = $user->phoneActivation;
 			}
 		
 		else
@@ -102,9 +122,10 @@ Route::post('settingsInstagram', function()
 				$response['redirect'] = $redirect;
 				Session::put('instagram', $insta);
 			}
-		//creates rest of response object and returns it
+
+		// Creates rest of response object and returns it
 		$response['success'] = true;
-		return json_encode($response);
+		return $response;
 	});
 
 Route::post('settingsTwitter', function()
@@ -116,12 +137,9 @@ Route::post('settingsTwitter', function()
 			'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E'
 		);
 
-		/*** TEST CODE ONLY* **/
-		$user = User::find('user3@user.com');
+		$user = Session::get('user');
 		Session::put('user', $user);
 
-		#### this is what we'll user in the actual app ###
-		//$user = Session::find('user');
 		$token = $user->twitterToken;
 		$secret = $user->twitterSecret;
 
@@ -133,8 +151,14 @@ Route::post('settingsTwitter', function()
 					$token,
 					$secret
 				);
-				$destroyUser = $final_connection->post('friendships/destroy', array('screen_name' => '@realrickmorales'));
-				$response['redirect'] = 'localhost.socialnukemain.com/settings-test';				
+
+				Session::put('twitter', $final_connection);
+
+				$user->twitterActivation = 1;
+				$user->save();
+
+				$response['redirect'] = 'settings-test';
+				$response['activation']['twitterActivation'] = true;
 			}
 		else 
 			{
@@ -153,7 +177,7 @@ Route::post('settingsTwitter', function()
 	    	}
 
 	    $response['success'] = true;
-	    return json_encode($response);
+	    return $response;
 
 	} catch (Exception $e) {
 		echo $e->getMessage();
@@ -168,15 +192,13 @@ Route::post('settingsSnapchat', function()
 		return json_encode($response);
  	});
 
-/************Handles all the callback urls*************/
-##### MOMO'S USER ID: 625348784 #####
 Route::get('instagramCallback', function()
 	{
 		try {
 			//retrieves instagram object from session
 			$insta = Session::get('instagram');
 			$user = Session::get('user');
-			
+
 			//retrieves the access token
 			$code = $_GET['code'];	
 			$data = $insta->getOAuthToken($code);
@@ -185,19 +207,25 @@ Route::get('instagramCallback', function()
 			$insta->setAccessToken($data);
 			$token = $insta->getAccessToken();
 
+			// Update instagram settings in user
 			$user->instagramToken = $token;
+			$user->instagramActivation = 1;
 			$user->save();
 
-			//saves updated instagram object in session
+			// Updates the session
 			Session::put('instagram', $insta);
+			Session::put('user', $user);
 
-			//test to see whether Instagram works
-			//$insta->modifyRelationship('unfollow', 625348784);
-			$relations = $insta->getUserRelationship(625348784);
+			//creates part of response object
+			$response['success'] = true;
+			$response['redirect'] = 'settings-test';
+			$response['activation']['facebookActivation'] = $user->facebookActivation;
+			$response['activation']['instagramActivation'] = $user->instagramActivation;
+			$response['activation']['twitterActivation'] = $user->twitterActivation;
+			$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+			$response['activation']['phoneActivation'] = $user->phoneActivation;
 
-			echo '<pre>';
-				print_r($relations);
-			echo '<pre>';
+			return $response;
 
 		} catch(Exception $e) {
 			echo $e->getMessage();
@@ -265,23 +293,34 @@ Route::get('snapchatLogin', function()
 Route::post('snapchatConnect', function()
 {	
 	try {
+
 		$snapchat = new Snapchat($_REQUEST['user'], $_REQUEST['password']);
 
 		if ($snapchat->returnSuccess()) { 
-			$response['success'] = true;
-			$response['snapchat'] = $snapchat;
-			$response['redirect'] = 'settings-test';
+
+			$user = Session::get('user');
+			
+			$user->snapchatActivation = 1;
+			$user->save();
+
 			Session::put('snapchat', $snapchat);
-			Session::put('snapchatActivated', true);
+			Session::put('user', $user);
+
+			$response['success'] = true;
+			$response['redirect'] = 'settings-test';
+			$response['activation']['facebookActivation'] = $user->facebookActivation;
+			$response['activation']['instagramActivation'] = $user->instagramActivation;
+			$response['activation']['twitterActivation'] = $user->twitterActivation;
+			$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+			$response['activation']['phoneActivation'] = $user->phoneActivation;
 		}
 		else {
 			$response['success'] = false;
-			$response['snapchat'] = 'failure';
 		}
-		return json_encode($response);
+		return $response;
 
 	} catch (Exception $e) {
-		echo $e->getMessage();
+		echo 'Error : ' . $e->getMessage();
 	}
 
 });
