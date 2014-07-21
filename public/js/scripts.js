@@ -92,8 +92,9 @@ $(document).ready(function() {
             this.active = activationStorage[this.socNetwork.toLowerCase() + 'Activation'];
             this._input = $(this.base.find('.input-text'));
             
-            if(this.active != true) {
-                this._input.addClass('hidden');
+            if(this.active) {
+                this._input.removeClass('hidden');
+                this._button.addClass('active');
             }
 
             this.launchListener();

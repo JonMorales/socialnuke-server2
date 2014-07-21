@@ -129,68 +129,92 @@ Route::post('settingsInstagram', function()
 	});
 
 Route::post('settingsTwitter', function()
-{
-	try {
-		//creates new TwitterOAuth object 
-		$twitter = new TwitterOAuth(
-			'hPt7qgK7t1gutuGvbpKRtw',
-			'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E'
-		);
+	{
+		try {
+			//creates new TwitterOAuth object 
+			$twitter = new TwitterOAuth(
+				'hPt7qgK7t1gutuGvbpKRtw',
+				'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E'
+			);
 
-		$user = Session::get('user');
-		Session::put('user', $user);
+			$user = Session::get('user');
 
-		$token = $user->twitterToken;
-		$secret = $user->twitterSecret;
+			$token = $user->twitterToken;
+			$secret = $user->twitterSecret;
 
-		if($token&&$secret!=null) 
-			{
-				$final_connection = new TwitterOAuth(
-					'hPt7qgK7t1gutuGvbpKRtw',
-					'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
-					$token,
-					$secret
-				);
+			if($token&&$secret!=null) 
+				{
+					$final_connection = new TwitterOAuth(
+						'hPt7qgK7t1gutuGvbpKRtw',
+						'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
+						$token,
+						$secret
+					);
 
-				Session::put('twitter', $final_connection);
+					$user->twitterActivation = 1;
+					$user->save();
 
-				$user->twitterActivation = 1;
-				$user->save();
+					// Updates the session
+					Session::put('twitter', $final_connection);
+					Session::put('user', $user);
 
-				$response['redirect'] = 'settings-test';
-				$response['activation']['twitterActivation'] = true;
-			}
-		else 
-			{
-				// Retrieve temporary credentials and store temporary OAuth token
-				$temporary_credentials = $twitter->getRequestToken('http://localhost.socialnukemain.com/twitterCallback');
-				$temporary_token = $temporary_credentials['oauth_token'];
+					// Creates part of the response object
+					$response['redirect'] = 'settings-test';
+					$response['activation']['facebookActivation'] = $user->facebookActivation;
+					$response['activation']['instagramActivation'] = $user->instagramActivation;
+					$response['activation']['twitterActivation'] = $user->twitterActivation;
+					$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+					$response['activation']['phoneActivation'] = $user->phoneActivation;
+				}
+			else 
+				{
+					// Retrieve temporary credentials and store temporary OAuth token
+					$temporary_credentials = $twitter->getRequestToken('http://localhost.socialnukemain.com/twitterCallback');
+					$temporary_token = $temporary_credentials['oauth_token'];
 
-				// Store temporary credentials into session for later use in callback
-			    Session::put('twitter_temp_cred', $temporary_credentials);
+					// Store temporary credentials into session for later use in callback
+				    Session::put('twitter_temp_cred', $temporary_credentials);
 
-				// Retrieve redirect URL using temporary OAuth token		
-			    $redirect = $twitter->getAuthorizeURL($temporary_token);
-			    
-			    // Send redirect URL back to mobile device
-			    $response['redirect'] = $redirect;
-	    	}
+					// Retrieve redirect URL using temporary OAuth token		
+				    $redirect = $twitter->getAuthorizeURL($temporary_token);
+				    
+				    // Send redirect URL back to mobile device
+				    $response['redirect'] = $redirect;
+		    	}
 
-	    $response['success'] = true;
-	    return $response;
+		    // Finalize response object and return
+		    $response['success'] = true;
+		    return $response;
 
-	} catch (Exception $e) {
-		echo $e->getMessage();
-	}
-});
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+	});
 	
 Route::post('settingsSnapchat', function()
  	{
  		// Send redirect URL back to mobile device
 	    $response['redirect'] = 'snapchatLogin';
 	    $response['success'] = true;
-		return json_encode($response);
+		return $response;
  	});
+
+Route::post('settingsPhone', function()
+	{
+		$user = Session::get('user');
+		$user->phoneActivation = 1;
+		$user->save();
+
+		// Send redirect URL back to mobile device
+	    $response['redirect'] = 'settings-test';
+	    $response['success'] = true;
+	    $response['activation']['facebookActivation'] = $user->facebookActivation;
+		$response['activation']['instagramActivation'] = $user->instagramActivation;
+		$response['activation']['twitterActivation'] = $user->twitterActivation;
+		$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+		$response['activation']['phoneActivation'] = $user->phoneActivation;
+		return $response;
+	});
 
 Route::get('instagramCallback', function()
 	{
@@ -216,7 +240,7 @@ Route::get('instagramCallback', function()
 			Session::put('instagram', $insta);
 			Session::put('user', $user);
 
-			//creates part of response object
+			// Creates the response object
 			$response['success'] = true;
 			$response['redirect'] = 'settings-test';
 			$response['activation']['facebookActivation'] = $user->facebookActivation;
@@ -236,76 +260,44 @@ Route::get('twitterCallback', function()
 	{
 
 		try {
-		$user = Session::get('user');
-		$temporary_credentials = Session::get('twitter_temp_cred');
-		
-		// Build a new TwitterOAuth object using temporary credentials
-		$twitter = new TwitterOAuth(
-			'hPt7qgK7t1gutuGvbpKRtw',
-			'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
-			$temporary_credentials['oauth_token'],
-			$temporary_credentials['oauth_token_secret']
-		);
-
-		//retrieves the final access token
-		$final_credentials = $twitter->getAccessToken(
-			$_GET['oauth_verifier'],
-			$temporary_credentials['oauth_token'],
-			$temporary_credentials['oauth_token_secret']
-		);
-
-		// Build a final TwitterOAuth object using final credentials
-		$final_connection = new TwitterOAuth(
-			'hPt7qgK7t1gutuGvbpKRtw',
-			'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
-			$final_credentials['oauth_token'],
-			$final_credentials['oauth_token_secret']
-		);
-
-		$token = $final_credentials['oauth_token'];
-		$secret = $final_credentials['oauth_token_secret'];
-		
-		$user->twitterToken = $token;
-		$user->twitterSecret = $secret;
-		$user->save();
-
-		Session::put('twitter', $final_connection);
-
-		return View::make('settings-test');
-		/*
-		$destroyUser = $final_connection->post('friendships/destroy', array('screen_name' => 'steforzech'));
-		print_r($destroyUser);
-		*/ } catch (Exception $e) {
-		echo $e->getMessage();
-		}
-	});
-
-
-/*=====================================
-SnapChat Login and Callback
-======================================*/
-
-Route::get('snapchatLogin', function()
-{
-	return View::make('snapchat-login');
-});
-
-Route::post('snapchatConnect', function()
-{	
-	try {
-
-		$snapchat = new Snapchat($_REQUEST['user'], $_REQUEST['password']);
-
-		if ($snapchat->returnSuccess()) { 
-
 			$user = Session::get('user');
+			$temporary_credentials = Session::get('twitter_temp_cred');
 			
-			$user->snapchatActivation = 1;
+			// Build a new TwitterOAuth object using temporary credentials
+			$twitter = new TwitterOAuth(
+				'hPt7qgK7t1gutuGvbpKRtw',
+				'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
+				$temporary_credentials['oauth_token'],
+				$temporary_credentials['oauth_token_secret']
+			);
+
+			//retrieves the final access token
+			$final_credentials = $twitter->getAccessToken(
+				$_GET['oauth_verifier'],
+				$temporary_credentials['oauth_token'],
+				$temporary_credentials['oauth_token_secret']
+			);
+
+			// Build a final TwitterOAuth object using final credentials
+			$final_connection = new TwitterOAuth(
+				'hPt7qgK7t1gutuGvbpKRtw',
+				'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
+				$final_credentials['oauth_token'],
+				$final_credentials['oauth_token_secret']
+			);
+
+			$token = $final_credentials['oauth_token'];
+			$secret = $final_credentials['oauth_token_secret'];
+			
+			$user->twitterToken = $token;
+			$user->twitterSecret = $secret;
+			$user->twitterActivation = 1;
 			$user->save();
 
-			Session::put('snapchat', $snapchat);
+			Session::put('twitter', $final_connection);
 			Session::put('user', $user);
 
+			// Creates the response object
 			$response['success'] = true;
 			$response['redirect'] = 'settings-test';
 			$response['activation']['facebookActivation'] = $user->facebookActivation;
@@ -313,14 +305,55 @@ Route::post('snapchatConnect', function()
 			$response['activation']['twitterActivation'] = $user->twitterActivation;
 			$response['activation']['snapchatActivation'] = $user->snapchatActivation;
 			$response['activation']['phoneActivation'] = $user->phoneActivation;
-		}
-		else {
-			$response['success'] = false;
-		}
-		return $response;
 
-	} catch (Exception $e) {
-		echo 'Error : ' . $e->getMessage();
-	}
+			return $response;
+		
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
 
-});
+	});
+
+/*=====================================
+SnapChat Login and Callback
+======================================*/
+
+Route::get('snapchatLogin', function()
+	{
+		return View::make('snapchat-login');
+	});
+
+Route::post('snapchatConnect', function()
+	{	
+		try {
+
+			$snapchat = new Snapchat($_REQUEST['user'], $_REQUEST['password']);
+
+			if ($snapchat->returnSuccess()) { 
+
+				$user = Session::get('user');
+				
+				$user->snapchatActivation = 1;
+				$user->save();
+
+				Session::put('snapchat', $snapchat);
+				Session::put('user', $user);
+
+				$response['success'] = true;
+				$response['redirect'] = 'settings-test';
+				$response['activation']['facebookActivation'] = $user->facebookActivation;
+				$response['activation']['instagramActivation'] = $user->instagramActivation;
+				$response['activation']['twitterActivation'] = $user->twitterActivation;
+				$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+				$response['activation']['phoneActivation'] = $user->phoneActivation;
+			}
+			else {
+				$response['success'] = false;
+			}
+			return $response;
+
+		} catch (Exception $e) {
+			echo 'Error : ' . $e->getMessage();
+		}
+
+	});
