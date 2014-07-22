@@ -60,7 +60,7 @@ Route::post('settingsInstagram', function()
 		));
 
 		/*** FOR TEST PURPOSES ONLY ***/
-		$user = User::find('user0@user.com');
+		$user = User::find('user3@user.com');
 		Session::put('user', $user);
 
 		#### this line will be used in actual app ####
@@ -78,7 +78,7 @@ Route::post('settingsInstagram', function()
 				Session::put('instagram', $insta);
 				
 				//creates part of response object
-				$response['redirect'] = 'http://localhost.socialnukemain.com/settings-test';
+				//$response['redirect'] = 'http://localhost.socialnukemain.com/settings-test';
 			}
 		
 		else
@@ -182,6 +182,11 @@ Route::post('settingsSnapchat', function()
  	});
 
 /************Handles all the callback urls*************/
+Route::get('nuke', function()
+	{
+		return View::make('nuke-page');
+	});
+
 ##### MOMO'S USER ID: 625348784 #####
 Route::get('instagramCallback', function()
 	{

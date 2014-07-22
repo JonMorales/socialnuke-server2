@@ -38,7 +38,7 @@
             @Settings Page
             =========================================*/
 
-            .button {
+            .button, .nextButton {
                 border-radius: 10px;
                 border: 1px solid black;
                 height: 10px;
@@ -50,7 +50,7 @@
                 background: #000;
             }
 
-            .button:hover {
+            .button:hover, .nextButton:hover {
                 cursor: pointer;
             }
         </style>
@@ -69,6 +69,27 @@
 
             /* This is the constructor used in the real app;
                 except for the url, this is the real deal */
+                var next = {};
+                    next.initialize = function() {
+                        this.base = $('.content');
+                        this._button = $(this.base.find('.nextButton'));
+                        this._fields = {};
+                        this.launchListener();
+                    }
+                    next.launchListener = function() {
+                        var self = this;
+                        this._button.click(function() {
+                        
+                            $('.api-container').each(function(){
+                                $this = $(this);
+                                self._fields[$this.attr('data-type')] = $this.find('.input-text').val();
+                            })
+                            window.localStorage.setItem('fields',JSON.stringify(self._fields));
+                            console.log(window.localStorage);
+                        })                       
+                    }
+                next.initialize();
+
 
                 /*=====================================================
                 @Visual Styling
@@ -80,6 +101,7 @@
 
                     this._button = $(this.base.find('.button'));
                     this._input = $(this.base.find('.input-text'));
+                    this._poop = $('.next');
                     this.active = false;
                     this.launchListener();
                 }
@@ -104,6 +126,7 @@
                 }
                 Api.prototype.callback = function() {
                     this._input.removeClass('hidden');
+                    this._poop.removeClass('hidden');
                 }
 
                 $('.api-container').each(function(){
@@ -148,7 +171,7 @@
                                     console.log(data);
                                     self._parent.callback();
                                     var URL = data['redirect'];
-                                    window.location.href = URL;
+                                    //window.location.href = URL;
                                     //alert(URL);
                                 }
                                 else {
@@ -174,27 +197,31 @@
                 <div data-type="Facebook" class="api-container">
                     <h3>Facebook</h3>
                     <div class="button"></div>
-                    <input type="text" class="input-text hidden"></input>
+                    <input type="text" class="input-text"></input>
                 </div>
                 <div data-type="Twitter" class="api-container">
                     <h3>Twitter</h3>
                     <div class="button"></div>
-                    <input type="text" class="input-text hidden"></input>
+                    <input type="text" class="input-text"></input>
                 </div>
                 <div data-type="Snapchat" class="api-container">
                     <h3>Snapchat</h3>
                     <div class="button"></div>
-                    <input type="text" class="input-text hidden"></input>
+                    <input type="text" class="input-text"></input>
                 </div>
                 <div data-type="Instagram" class="api-container">
                     <h3>Instagram</h3>
                     <div class="button"></div>
-                    <input type="text" class="input-text hidden"></input>
+                    <input type="text" class="input-text"></input>
                 </div>
                 <div data-type="Phone" class="api-container">
                     <h3>Phone</h3>
                     <div class="button"></div>
-                    <input type="text" class="input-text hidden"></input>
+                    <input type="text" class="input-text"></input>
+                </div>
+                <div data-type="nextButton" class="next">
+                    <h3>Click here to go to next step!</h3>
+                    <div class="nextButton"></div>
                 </div>
             </div>
         </div>
