@@ -35,10 +35,56 @@
     			nuke.launchListener = function() {
     				var self = this;
     				this._button.click(function() {
-    					//code
+    					$this = $(this);
+    					var target = JSON.parse(window.localStorage.getItem('fields'));
+    					var request = new AjaxRequest();
+    					console.log(target);
+    					request.initialize('launchNuke', target, this.callback, this);
+
     				}    	
     			)}
-    		nuke.initialize();  
+    		nuke.initialize();
+	    	function AjaxRequest() {}
+		    	AjaxRequest.prototype.initialize = function(url, dataToSend, callback, parent){
+		    		this.url = url;
+		    		this.dataToSend = dataToSend;
+		    		this.callback = callback;
+		    		this._parent = parent;
+		    		this.connect();
+		    	}
+		    	AjaxRequest.prototype.connect = function() {
+		    		var self = this;
+		    		$.ajax({
+		    			async: false,
+		    			url: "/" + self.url,
+		    			data: self.dataToSend,
+		    			type: "POST",
+		    			dataType: "json",
+		    		    error: function(jqXhr, textStatus, errorThrown) {
+		                /* uncomment if you want to see the errors
+		                alert("There was an error");
+		                for(var i=0; i<jqXhr.length; i++) {
+		                    alert(jqXhr[i]);
+		                };
+		                alert(textStatus);
+		                alert(errorThrown);
+		                */
+		            	},
+		            	success: function(data, status, jqXhr){
+		                	if(status === "success") {
+		                    	if(data['success']) {
+		                        	alert(data['target']);
+		                    	}
+		                    	else {
+		                        	alert('Incorrect username or password.');
+		                    	}
+		                	}
+		                	else {
+		                    	alert("There was an error!");
+		                	}
+		           		}
+		    		});
+    		}  
 		})
 
     </script>

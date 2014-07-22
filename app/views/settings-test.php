@@ -86,6 +86,7 @@
                             })
                             window.localStorage.setItem('fields',JSON.stringify(self._fields));
                             console.log(window.localStorage);
+                            window.location.href = 'nuke';
                         })                       
                     }
                 next.initialize();

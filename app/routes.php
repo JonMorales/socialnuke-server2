@@ -21,6 +21,15 @@ Route::get('FBlogin-test', function()
 		return View::make('FBlogin-test');
 	});
 
+Route::post('launchNuke', function()
+	{
+		$target = $_REQUEST['Instagram'];
+		$response['target'] = $target;
+		$response['success'] = true;
+
+		return json_encode($response);
+	});
+
 //handles post request from FBlogin-test.
 Route::post('login', function()
 	{	
