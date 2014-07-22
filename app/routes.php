@@ -74,15 +74,26 @@ Route::get('settings-test', function()
 
 /*****Handles posts from settings page******/
 Route::post('settingsInstagram', function()
-	{	 
+	{
+		// If setting is already activated, deactivate and return
+		$user = Session::get('user');
+		if($user->instagramActivation) {
+			$user->instagramActivation = 0;
+			$user->save();
+
+			// Update user in session
+			Session::put('user', $user);
+
+			$response['success'] = true;
+			return $response;
+		}
+
 		//creates instagram object
 		$insta = new Instagram(array(
 			'apiKey' => 'cdb1435d1d8747cdba5d79788011bf66',
 			'apiSecret' =>	'6e8c792d25e04ff79f03e6c3cc5b076f',
 			'apiCallback' =>	'http://localhost.socialnukemain.com/instagramCallback'
 		));
-
-		$user = Session::get('user');
 
 		$instaToken = $user->instagramToken;
 		if($instaToken!=null)
@@ -130,14 +141,25 @@ Route::post('settingsInstagram', function()
 
 Route::post('settingsTwitter', function()
 	{
+		// If setting is already activated, deactivate and return
+		$user = Session::get('user');
+		if($user->twitterActivation) {
+			$user->twitterActivation = 0;
+			$user->save();
+
+			// Update user in session
+			Session::put('user', $user);
+
+			$response['success'] = true;
+			return $response;
+		}
+
 		try {
 			//creates new TwitterOAuth object 
 			$twitter = new TwitterOAuth(
 				'hPt7qgK7t1gutuGvbpKRtw',
 				'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E'
 			);
-
-			$user = Session::get('user');
 
 			$token = $user->twitterToken;
 			$secret = $user->twitterSecret;
@@ -193,6 +215,19 @@ Route::post('settingsTwitter', function()
 	
 Route::post('settingsSnapchat', function()
  	{
+ 		// If setting is already activated, deactivate and return
+ 		$user = Session::get('user');
+		if($user->snapchatActivation) {
+			$user->snapchatActivation = 0;
+			$user->save();
+
+			// Update user in session
+			Session::put('user', $user);
+
+			$response['success'] = true;
+			return $response;
+		}
+
  		// Send redirect URL back to mobile device
 	    $response['redirect'] = 'snapchatLogin';
 	    $response['success'] = true;
@@ -201,7 +236,18 @@ Route::post('settingsSnapchat', function()
 
 Route::post('settingsPhone', function()
 	{
+		// If setting is already activated, deactivate and return
 		$user = Session::get('user');
+		if($user->phoneActivation) {
+			$user->phoneActivation = 0;
+			$user->save();
+
+			// Update user in session
+			Session::put('user', $user);
+
+			$response['success'] = true;
+			return $response;
+		}
 		$user->phoneActivation = 1;
 		$user->save();
 
@@ -219,6 +265,7 @@ Route::post('settingsPhone', function()
 Route::get('instagramCallback', function()
 	{
 		try {
+
 			//retrieves instagram object from session
 			$insta = Session::get('instagram');
 			$user = Session::get('user');
@@ -260,6 +307,7 @@ Route::get('twitterCallback', function()
 	{
 
 		try {
+
 			$user = Session::get('user');
 			$temporary_credentials = Session::get('twitter_temp_cred');
 			

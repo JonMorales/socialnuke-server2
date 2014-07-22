@@ -93,7 +93,7 @@ $(document).ready(function() {
             this._input = $(this.base.find('.input-text'));
             
             if(this.active) {
-                this._input.removeClass('hidden');
+                this._input.addClass('active');
                 this._button.addClass('active');
             }
 
@@ -102,20 +102,26 @@ $(document).ready(function() {
         Api.prototype.launchListener = function() {
             var self = this;
             this._button.click(function() {
-                if(self.active) {
-                    self.active = false;
-                    self._button.removeClass('active');
+                if(!self.active) {
+                    self.active = true;
+                    // self._input.addClass('active');
+                    self._button.addClass('active');
+                    self.sendRequest();
                 }
                 else {
-                    self.active = true;
-                    self._button.addClass('active');
+                    self.active = false;
+                    self._input.removeClass('active');
+                    self._button.removeClass('active');
                     self.sendRequest();
                 }
             })
         };
         Api.prototype.sendRequest = function() {
             var request = new AjaxRequest();
-            request.initialize('settings' + this.socNetwork, null, this.callback, this);
+            var activeObject = {
+                active : this.active
+            }
+            request.initialize('settings' + this.socNetwork, activeObject, this.callback, this);
         };
         Api.prototype.callback = function(data) {
             var activation = {};
@@ -123,8 +129,12 @@ $(document).ready(function() {
                 activation[key] = data.activation[key];
             }
             window.localStorage.setItem('activation', JSON.stringify(activation));
+            
+            // Redirect, if applicable
             var URL = data['redirect'];
-            window.location.href = URL;
+            if(URL) {
+                window.location.href = URL;
+            }
         };
 
         /* Create API functionality and store objects into an array */

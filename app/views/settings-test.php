@@ -27,11 +27,24 @@
             /* Styles for the main page */
 
 
-            #page-container { width: 50%; margin: 0 auto; }
-            #page-container .content { text-align: center }
+            #page-container {
+                width: 50%; margin: 0 auto;
+            }
+            #page-container .content {
+                text-align: center
+            }
 
-            .hidden { display: none; }
+            .hidden {
+                display: none;
+            }
 
+            .input-text {
+                display: none;
+            }
+            .input-text.active {
+                display: block;
+                margin: 0 auto;
+            }
 
             /*========================================
             @Settings Page
