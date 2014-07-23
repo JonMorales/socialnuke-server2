@@ -23,8 +23,30 @@ Route::get('FBlogin-test', function()
 
 Route::post('launchNuke', function()
 	{
-		$target = $_REQUEST['Instagram'];
-		$response['target'] = $target;
+		$insta = Session::get('insta');
+		$twitter = Session::get('twitter');
+		$snapchat = Session::get('snapchat');
+
+		$twitterTarget = $_REQUEST['Twitter'];
+		$instaTarget = $_REQUEST['Instagram'];
+		$snapTarget = $_REQUEST['Snapchat'];
+		$phoneTarget = $_REQUEST['Phone'];
+
+		if(strlen($twitterTarget)>0) {
+			$destroyUser = $twitter->post('friendships/destroy', array('screen_name' => $twitterTarget));
+		}
+		if(strlen($instaTarget)>0) {
+			$insta->modifyRelationship('unfollow', $instaTarget);
+		}
+		if(strlen($snapTarget)>0) {
+			$snapchat->deleteFriend($snapTarget);
+		}
+		if(strlen($phoneTarget)>0) {
+			//delete contact
+		}
+		//$isobject = is_string($instaTarget);
+		//$response['target'] = $isobject;
+		$response['target'] = 'did it work?';
 		$response['success'] = true;
 
 		return json_encode($response);
