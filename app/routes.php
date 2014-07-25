@@ -21,32 +21,59 @@ Route::get('/', function()
 		return View::make('login');
 	});
 
+####### MOMO's ID: 625348784 			#######
+####### Rick's twitter: realrickmorales #######
+####### Rick's snapchat: muzangles 		#######
 Route::post('launchNuke', function()
 	{
-		$insta = Session::get('insta');
-		$twitter = Session::get('twitter');
-		$snapchat = Session::get('snapchat');
+		$user = Session::get('user');
+		//$twitter = Session::get('twitter');
+		//$insta = Session::get('insta');
+		//$snapchat = Session::get('snapchat');
 
+		//pulls all info needed from request
 		$twitterTarget = $_REQUEST['Twitter'];
 		$instaTarget = $_REQUEST['Instagram'];
 		$snapTarget = $_REQUEST['Snapchat'];
 		$phoneTarget = $_REQUEST['Phone'];
 
+		//only runs the deletion code if something was put into form
 		if(strlen($twitterTarget)>0) {
-			$destroyUser = $twitter->post('friendships/destroy', array('screen_name' => $twitterTarget));
+			$token = $user->twitterToken;
+			$secret = $user->twitterSecret;
+
+			$final_connection = new TwitterOAuth(
+							'hPt7qgK7t1gutuGvbpKRtw',
+							'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
+							$token,
+							$secret
+			);
+			$destroyUser = $final_connection->post('friendships/destroy', array('screen_name' => $twitterTarget));
 		}
+
 		if(strlen($instaTarget)>0) {
+			$token = $user->instagramToken;
+			$insta = new Instagram(array(
+				'apiKey' => 'cdb1435d1d8747cdba5d79788011bf66',
+				'apiSecret' =>	'6e8c792d25e04ff79f03e6c3cc5b076f',
+				'apiCallback' =>	'http://localhost.socialnukemain.com/instagramCallback'
+			));
+			$insta->setAccessToken($token);
 			$insta->modifyRelationship('unfollow', $instaTarget);
 		}
+
 		if(strlen($snapTarget)>0) {
+			$username = $user->snapchatUsername;
+			$pass = $user->snapchatPassword;
+
+			$snapchat = new Snapchat($username, $pass);
 			$snapchat->deleteFriend($snapTarget);
 		}
+
 		if(strlen($phoneTarget)>0) {
 			//delete contact
 		}
-		//$isobject = is_string($instaTarget);
-		//$response['target'] = $isobject;
-		$response['target'] = 'did it work?';
+		$response['target'] = '';
 		$response['success'] = true;
 
 		return json_encode($response);
