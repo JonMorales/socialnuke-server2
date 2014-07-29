@@ -43,10 +43,10 @@ Route::post('launchNuke', function()
 			$secret = $user->twitterSecret;
 
 			$final_connection = new TwitterOAuth(
-							'hPt7qgK7t1gutuGvbpKRtw',
-							'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
-							$token,
-							$secret
+				'hPt7qgK7t1gutuGvbpKRtw',
+				'NGQu97Brv8rH0y6JAssay6SHxtnjbTBR6CXPUm6E',
+				$token,
+				$secret
 			);
 			$destroyUser = $final_connection->post('friendships/destroy', array('screen_name' => $twitterTarget));
 		}
@@ -56,7 +56,7 @@ Route::post('launchNuke', function()
 			$insta = new Instagram(array(
 				'apiKey' => 'cdb1435d1d8747cdba5d79788011bf66',
 				'apiSecret' =>	'6e8c792d25e04ff79f03e6c3cc5b076f',
-				'apiCallback' =>	'http://localhost.socialnukemain.com/instagramCallback'
+				'apiCallback' =>	'http://www.laurelpetrulionis.com/public/instagramCallback'
 			));
 			$insta->setAccessToken($token);
 			$insta->modifyRelationship('unfollow', $instaTarget);
@@ -109,7 +109,7 @@ Route::post('login', function()
 			$response['user'] = $user;
 
 			$response['success'] = true;
-			$response['redirect'] = 'settings-test';
+			$response['redirect'] = 'settings';
 			$response['activation']['facebookActivation'] = $user->facebookActivation;
 			$response['activation']['instagramActivation'] = $user->instagramActivation;
 			$response['activation']['twitterActivation'] = $user->twitterActivation;
@@ -125,9 +125,9 @@ Route::post('login', function()
 
 	});
 
-Route::get('settings-test', function()
+Route::get('settings', function()
 	{
-		return View::make('settings-test');
+		return View::make('settings');
 	});
 
 /*****Handles posts from settings page******/
@@ -150,7 +150,7 @@ Route::post('settingsInstagram', function()
 		$insta = new Instagram(array(
 			'apiKey' => 'cdb1435d1d8747cdba5d79788011bf66',
 			'apiSecret' =>	'6e8c792d25e04ff79f03e6c3cc5b076f',
-			'apiCallback' =>	'http://localhost.socialnukemain.com/instagramCallback'
+			'apiCallback' =>	'http://www.laurelpetrulionis.com/public/instagramCallback'
 		));
 
 		$instaToken = $user->instagramToken;
@@ -164,7 +164,7 @@ Route::post('settingsInstagram', function()
 				Session::put('instagram', $insta);
 				
 				//creates part of response object
-				//$response['redirect'] = 'http://localhost.socialnukemain.com/settings-test';
+				//$response['redirect'] = 'http://www.laurelpetrulionis.com/public/settings';
 
 				// Update activation setting in user and session
 				$user->instagramActivation = 1;
@@ -174,7 +174,7 @@ Route::post('settingsInstagram', function()
 				Session::put('user', $user);
 
 				// Creates part of the response object
-				$response['redirect'] = 'settings-test';
+				$response['redirect'] = 'settings';
 				$response['activation']['facebookActivation'] = $user->facebookActivation;
 				$response['activation']['instagramActivation'] = $user->instagramActivation;
 				$response['activation']['twitterActivation'] = $user->twitterActivation;
@@ -243,7 +243,7 @@ Route::post('settingsTwitter', function()
 					Session::put('user', $user);
 
 					// Creates part of the response object
-					$response['redirect'] = 'settings-test';
+					$response['redirect'] = 'settings';
 					$response['activation']['facebookActivation'] = $user->facebookActivation;
 					$response['activation']['instagramActivation'] = $user->instagramActivation;
 					$response['activation']['twitterActivation'] = $user->twitterActivation;
@@ -253,7 +253,7 @@ Route::post('settingsTwitter', function()
 			else 
 				{
 					// Retrieve temporary credentials and store temporary OAuth token
-					$temporary_credentials = $twitter->getRequestToken('http://localhost.socialnukemain.com/twitterCallback');
+					$temporary_credentials = $twitter->getRequestToken('http://www.laurelpetrulionis.com/public/twitterCallback');
 					$temporary_token = $temporary_credentials['oauth_token'];
 
 					// Store temporary credentials into session for later use in callback
@@ -335,7 +335,7 @@ Route::post('settingsPhone', function()
 		$user->save();
 
 		// Send redirect URL back to mobile device
-	    $response['redirect'] = 'settings-test';
+	    $response['redirect'] = 'settings';
 	    $response['success'] = true;
 	    $response['activation']['facebookActivation'] = $user->facebookActivation;
 		$response['activation']['instagramActivation'] = $user->instagramActivation;
@@ -372,7 +372,7 @@ Route::get('instagramCallback', function()
 
 			// Creates the response object
 			$response['success'] = true;
-			$response['redirect'] = 'settings-test';
+			$response['redirect'] = 'settings';
 			$response['activation']['facebookActivation'] = $user->facebookActivation;
 			$response['activation']['instagramActivation'] = $user->instagramActivation;
 			$response['activation']['twitterActivation'] = $user->twitterActivation;
@@ -430,7 +430,7 @@ Route::get('twitterCallback', function()
 
 			// Creates the response object
 			$response['success'] = true;
-			$response['redirect'] = 'settings-test';
+			$response['redirect'] = 'settings';
 			$response['activation']['facebookActivation'] = $user->facebookActivation;
 			$response['activation']['instagramActivation'] = $user->instagramActivation;
 			$response['activation']['twitterActivation'] = $user->twitterActivation;
@@ -471,7 +471,7 @@ Route::post('snapchatConnect', function()
 			Session::put('user', $user);
 
 			$response['success'] = true;
-			$response['redirect'] = 'settings-test';
+			$response['redirect'] = 'settings';
 			$response['activation']['facebookActivation'] = $user->facebookActivation;
 			$response['activation']['instagramActivation'] = $user->instagramActivation;
 			$response['activation']['twitterActivation'] = $user->twitterActivation;

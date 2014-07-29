@@ -54,7 +54,7 @@ $(document).ready(function() {
         };
         facebookForm.sendRequest = function() {
             var request = new AjaxRequest();
-            request.initialize('login', this.user, this.callback, this);   
+            request.initialize('public/login', this.user, this.callback, this);   
         };
         facebookForm.callback = function(data) {
         	if(data.success) {
@@ -121,7 +121,7 @@ $(document).ready(function() {
             var activeObject = {
                 active : this.active
             }
-            request.initialize('settings' + this.socNetwork, activeObject, this.callback, this);
+            request.initialize('public/settings' + this.socNetwork, activeObject, this.callback, this);
         };
         Api.prototype.callback = function(data) {
             var activation = {};
@@ -216,7 +216,7 @@ $(document).ready(function() {
         }
         snapchatForm.sendRequest = function() {
             var request = new AjaxRequest();
-            request.initialize('snapchatConnect', this.user, this.callback, this);   
+            request.initialize('public/snapchatConnect', this.user, this.callback, this);   
         }
         snapchatForm.callback = function(data) {
             var activation = {};
