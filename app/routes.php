@@ -277,7 +277,6 @@ Route::post('settingsTwitter', function()
 	
 Route::post('settingsSnapchat', function()
  	{
-
  		// If setting is already activated, deactivate and return
  		$user = Session::get('user');
 		if($user->snapchatActivation) {
@@ -286,7 +285,6 @@ Route::post('settingsSnapchat', function()
 
 			// Update user in session
 			Session::put('user', $user);
-
 			$response['success'] = true;
 			return $response;
 		}
@@ -297,18 +295,27 @@ Route::post('settingsSnapchat', function()
  			{	
  				$snapchat = new Snapchat($username, $password);
  				Session::put('snapchat', $snapchat);
+ 				$user->snapchatActivation = 1;
+				$user->save();
+				Session::put('user', $user);
+ 				$response['redirect'] = 'settings.html';
  			}
  		else 
  			{
  				// Send redirect URL back to mobile device
-	    		$response['redirect'] = 'snapchatLogin';
+	    		$response['redirect'] = 'snapchatLogin.html';
  			}
 
  		// Send redirect URL back to mobile device
-	    $response['redirect'] = 'snapchatLogin';
 	    $response['success'] = true;
+	    $response['activation']['facebookActivation'] = $user->facebookActivation;
+		$response['activation']['instagramActivation'] = $user->instagramActivation;
+		$response['activation']['twitterActivation'] = $user->twitterActivation;
+		$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+		$response['activation']['phoneActivation'] = $user->phoneActivation;
 		return $response;
  	});
+
 
 
 /************Handles all the callback urls*************/
@@ -464,6 +471,8 @@ Route::post('snapchatConnect', function()
 
 			$user = Session::get('user');
 			
+			$user->snapchatUsername = $_REQUEST['user'];
+			$user->snapchatPassword = $_REQUEST['password'];
 			$user->snapchatActivation = 1;
 			$user->save();
 
@@ -471,7 +480,7 @@ Route::post('snapchatConnect', function()
 			Session::put('user', $user);
 
 			$response['success'] = true;
-			$response['redirect'] = 'settings';
+			$response['redirect'] = 'settings.html';
 			$response['activation']['facebookActivation'] = $user->facebookActivation;
 			$response['activation']['instagramActivation'] = $user->instagramActivation;
 			$response['activation']['twitterActivation'] = $user->twitterActivation;
