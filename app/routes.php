@@ -21,6 +21,20 @@ Route::get('/', function()
 		return View::make('login');
 	});
 
+Route::post('update', function()
+	{
+		$user = Session::get('user');
+
+		$response['success'] = true;
+		$response['activation']['facebookActivation'] = $user->facebookActivation;
+		$response['activation']['instagramActivation'] = $user->instagramActivation;
+		$response['activation']['twitterActivation'] = $user->twitterActivation;
+		$response['activation']['snapchatActivation'] = $user->snapchatActivation;
+		$response['activation']['phoneActivation'] = $user->phoneActivation;
+
+		return $response;
+	});
+
 ####### MOMO's ID: 625348784 			#######
 ####### Rick's twitter: realrickmorales #######
 ####### Rick's snapchat: muzangles 		#######
@@ -73,10 +87,15 @@ Route::post('launchNuke', function()
 		if(strlen($phoneTarget)>0) {
 			//delete contact
 		}
-		$response['target'] = '';
+		$targetName = $twitterTarget . ", "
+					. $instaTarget . ", "
+					. $snapTarget . ", "
+					. $phoneTarget;
+
+		$response['targetName'] = $targetName;
 		$response['success'] = true;
 
-		return json_encode($response);
+		return $response;
 	});
 
 //handles post request from FBlogin-test.
@@ -298,12 +317,12 @@ Route::post('settingsSnapchat', function()
  				$user->snapchatActivation = 1;
 				$user->save();
 				Session::put('user', $user);
- 				$response['redirect'] = 'settings.html';
+ 				$response['redirect'] = 'settings';
  			}
  		else 
  			{
  				// Send redirect URL back to mobile device
-	    		$response['redirect'] = 'snapchatLogin.html';
+	    		$response['redirect'] = 'snapchatLogin';
  			}
 
  		// Send redirect URL back to mobile device
@@ -315,8 +334,6 @@ Route::post('settingsSnapchat', function()
 		$response['activation']['phoneActivation'] = $user->phoneActivation;
 		return $response;
  	});
-
-
 
 /************Handles all the callback urls*************/
 Route::get('nuke', function()
@@ -480,7 +497,7 @@ Route::post('snapchatConnect', function()
 			Session::put('user', $user);
 
 			$response['success'] = true;
-			$response['redirect'] = 'settings.html';
+			$response['redirect'] = 'settings';
 			$response['activation']['facebookActivation'] = $user->facebookActivation;
 			$response['activation']['instagramActivation'] = $user->instagramActivation;
 			$response['activation']['twitterActivation'] = $user->twitterActivation;
