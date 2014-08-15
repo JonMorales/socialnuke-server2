@@ -70,7 +70,7 @@ Route::post('launchNuke', function()
 			$insta = new Instagram(array(
 				'apiKey' => 'cdb1435d1d8747cdba5d79788011bf66',
 				'apiSecret' =>	'6e8c792d25e04ff79f03e6c3cc5b076f',
-				'apiCallback' =>	'http://www.laurelpetrulionis.com/public/instagramCallback'
+				'apiCallback' =>	'http://socialnuke.me/instagramCallback'
 			));
 			$insta->setAccessToken($token);
 			$insta->modifyRelationship('unfollow', $instaTarget);
@@ -169,7 +169,7 @@ Route::post('settingsInstagram', function()
 		$insta = new Instagram(array(
 			'apiKey' => 'cdb1435d1d8747cdba5d79788011bf66',
 			'apiSecret' =>	'6e8c792d25e04ff79f03e6c3cc5b076f',
-			'apiCallback' =>	'http://www.laurelpetrulionis.com/public/instagramCallback'
+			'apiCallback' =>	'http://socialnuke.me/instagramCallback'
 		));
 
 		$instaToken = $user->instagramToken;
@@ -183,7 +183,7 @@ Route::post('settingsInstagram', function()
 				Session::put('instagram', $insta);
 				
 				//creates part of response object
-				//$response['redirect'] = 'http://www.laurelpetrulionis.com/public/settings';
+				//$response['redirect'] = 'http://socialnuke.me/settings';
 
 				// Update activation setting in user and session
 				$user->instagramActivation = 1;
@@ -272,7 +272,7 @@ Route::post('settingsTwitter', function()
 			else 
 				{
 					// Retrieve temporary credentials and store temporary OAuth token
-					$temporary_credentials = $twitter->getRequestToken('http://www.laurelpetrulionis.com/public/twitterCallback');
+					$temporary_credentials = $twitter->getRequestToken('http://socialnuke.me/twitterCallback');
 					$temporary_token = $temporary_credentials['oauth_token'];
 
 					// Store temporary credentials into session for later use in callback
